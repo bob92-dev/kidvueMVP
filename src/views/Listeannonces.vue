@@ -1,27 +1,31 @@
 <template>
   <div>
-    <Annonce />
-    <Annonce />
+    <Annonce v-for="annonce in annonces" :key="annonce.id" :annonce="annonce" />
   </div>
 </template>
 
 <script>
 import Annonce from "@/components/annonce.vue";
-//import axios from "axios";
+import AnnonceService from "@/services/AnnonceService.js";
+
 export default {
   components: {
     Annonce
-  }//,
-  //appel à l'pi
-  //created() {
-  //  axios
-  //    .get("http://localhost:3000/annonces")
- //     .then(response => {
- //      console.log(response.data);
- //     })
- //     .catch(error => {
- //       console.log("There is an error");
-//      });
-//  }
+  },
+  data() {
+    return {
+      annonces: []
+    }
+  },
+  //appel à l'api
+  created() {
+    AnnonceService.getAnnonces()
+    .then(response => {
+        this.annonces = response.data;
+      })
+      .catch(error => {
+        console.log("There is an error" + error.response);
+      });
+  }
 };
 </script>

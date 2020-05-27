@@ -1,4 +1,6 @@
 <template>
+<div>
+  <router-link :to="{ name: 'uploader' }">Ajouter une annonce</router-link>
   <div class="form">
     <form>
       <div class="formgroup">
@@ -29,13 +31,12 @@
       </div>
       <button class="btn btn-primary" type="submit" v-on:click.prevent>Rechercher</button>
     </form>
-    <div>{{materiel}}</div>
+    <div>{{ materiel }}</div>
   </div>
+</div>  
 </template>
 
 <script>
-import axios from "axios";
-
 export default {
     data() {
     return {
