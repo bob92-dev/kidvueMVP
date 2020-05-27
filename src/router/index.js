@@ -1,21 +1,23 @@
-import Vue from "vue";
-import VueRouter from "vue-router";
-import Home from "../views/Home.vue";
+import Vue from 'vue'
+import Router from 'vue-router'
+import Listeannonces from "@/views/Listeannonces.vue";
+import Uploader from "@/views/Uploader.vue";
 
-Vue.use(VueRouter);
+Vue.use(Router)
 
-const routes = [
-  {
-    path: "/",
-    name: "Home",
-    component: Home
-  }
-  ];
+export default new Router({
+    mode: 'history',
+    routes: [
+        {
+            path: '/',
+            name: 'annonces',
+            component: Listeannonces
+        },
+        {
+            path: '/upload',
+            name: 'uploader',
+            component: Uploader
+        }
+    ]
 
-const router = new VueRouter({
-  mode: "history",
-  base: process.env.BASE_URL,
-  routes
-});
-
-export default router;
+})
