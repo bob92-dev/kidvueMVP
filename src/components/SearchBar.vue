@@ -26,6 +26,7 @@
                                                 <select v-model="select">
                                                 <option v-bind:key="index" v-for="(materiel, index) in materiels">{{ materiel }}</option>
                                                </select>
+                                               </label>
                                     <form id="searchbar-form" action="/s">
                                         <div class="searchbar__input-wrapper">
                                             <label class="searchbar__location">

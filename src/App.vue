@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <Contact />
     <div id="nav">
       <searchbar />
       <router-view />
@@ -7,13 +8,12 @@
   </div>
 </template>
 <script>
-import searchbar from "@/components/SearchBar.vue";
+import Contact from "@/components/Contact.vue";
 export default {
   components: {
-    searchbar
+    Contact
   }
 };
 </script>
 
-<style>
-</style>
+<style></style>
