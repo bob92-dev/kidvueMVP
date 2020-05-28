@@ -8,10 +8,11 @@
   </div>
 </template>
 <script>
-import Contact from "@/components/Contact.vue";
+import searchbar from "@/components/SearchBar.vue";
+
 export default {
   components: {
-    Contact
+    searchbar   
   }
 };
 </script>
