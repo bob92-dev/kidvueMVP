@@ -3,7 +3,7 @@
      <div class="container">
       <div class="flipper">
         <div class="front">
-          <img v-bind:src='imagesource' />
+          <img v-bind:src='imagesource'>
           <p class="caption">{{annonce.titre}}</p>
           <p class="caption"> {{ annonce.prix }}</p>
         </div>
@@ -26,23 +26,25 @@ import Contact from "@/components/Contact.vue";
 
 export default {
   components: {
-    Contact,
+    Contact
   },
   props: {
     annonce: Object,
     },
-  data() {
+    data() {
+   const imagesource = require(`@/assets/${this.annonce.photo}`)
     return {
       showContact: false,
-      imagesource: '"@/assets/" + annonce.photo'
+      imagesource
+           
     }
 
   },
   methods:{ send: function(){
     this.showContact = true
   }
-  },
- };
+  }
+  };
 
 </script>
 
