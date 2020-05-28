@@ -1,6 +1,11 @@
 <template>
   <div>
-    <Annonce v-for="annonce in annonces" :key="annonce.id" :annonce="annonce" />
+   
+      <Annonce
+       v-for="annonce in annonces"
+      :key="annonce.id"
+      :annonce="annonce"
+      />
   </div>
 </template>
 
@@ -8,10 +13,12 @@
 import Annonce from "@/components/annonce.vue";
 import AnnonceService from "@/services/AnnonceService.js";
 
+
 export default {
   components: {
     Annonce
   },
+  props: ["select"],
   data() {
     return {
       annonces: []

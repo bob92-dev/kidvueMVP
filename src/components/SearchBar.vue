@@ -3,7 +3,7 @@
     <div class="hero shift-with-hiw js-hero">
       <div class="hero__background" data-native-currency="GBP" aria-hidden="true">
         <div class="air-slideshow hero-slideshow">
-          <img alt="Paris-ac2c9c35b05b19e65af7c8eee89f2fae" src="voitureKOT.jpg" width="100%" />
+          <img alt="Paris-ac2c9c35b05b19e65af7c8eee89f2fae" src="@/assets/voitureKOT.jpg" width="100%" />
         </div>
       </div>
       <div class="hero__content page-container page-container-full text-center">

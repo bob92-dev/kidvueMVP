@@ -13,7 +13,7 @@
             "ville": "Meow Town",
             "date": "2019-01-03T21:54:00.000Z",
             "disponibility": true,
-            "photo": "mapoussette.jpeg"
+            "photo": "poussette1.jpg"
         },
         {
             "id": 2,
@@ -21,7 +21,7 @@
                 "id": "23",
                 "name": "babar"
             },
-            "category": "poussette",
+            "category": "lit parapluie",
             "marque": "safetyfirst",
             "titre": "Vends la lllllllalalallalalalala superpoussette",
             "prix": "5€/j",
@@ -29,7 +29,7 @@
             "ville": "dans ton uc",
             "date": "2019-01-03T21:54:00.000Z",
             "disponibility": true,
-            "photo": "mapoussetteetmonbebe.jpeg"
+            "photo": "poussette2.jpg"
         },
         {
             "id": 3,
@@ -37,7 +37,7 @@
                 "id": "2323",
                 "name": "antoine"
             },
-            "category": "poussette",
+            "category": "siege auto",
             "marque": "chicko",
             "titre": "olala ma superpoussette",
             "description": "hooooiiiiihhaaaa ma superpousette!",
@@ -45,7 +45,7 @@
             "ville": "antoinetown",
             "date": "2019-01-03T21:54:00.000Z",
             "disponibility": true,
-            "photo": "mapoussetteetmonbebe.jpeg"
+            "photo": "poussette3.jpg"
         }
     ]
 }

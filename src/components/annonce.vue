@@ -1,26 +1,19 @@
 <template>
- 
-  <div class="annonce">
-    <router-link
-      class="annonce-lien"
-      :to="{ name: 'detail-annonce', params: { id: annonce.id } }"
-      >Voir le détail de l'annonce
-    </router-link>
-    <div class="container">
+   <div class="annonce">
+     <div class="container">
       <div class="flipper">
         <div class="front">
-        {{annonce.photo}}
+          <img v-bind:src='imagesource' />
           <p class="caption">{{annonce.titre}}</p>
-          <p class="caption">{{annonce.prix}}</p>
+          <p class="caption"> {{ annonce.prix }}</p>
         </div>
         <div class="back">
           <h3>{{annonce.titre}}</h3>
           <p class="date">{{annonce.marque}}</p>
           <p class="description">{{annonce.description}}</p>
-          <button @click="send">Contacter le propriétaire</button>>
+          <button @click="send" class="btn btn-info">Contacter le propriétaire</button>>
           <Contact v-if="showContact"/>
-          </a>
-        </div>
+            </div>
       </div>
     </div>
   </div>
@@ -33,23 +26,23 @@ import Contact from "@/components/Contact.vue";
 
 export default {
   components: {
-    Contact
+    Contact,
   },
-
   props: {
-    annonce: Object
-  },
+    annonce: Object,
+    },
   data() {
     return {
-      showContact : false
+      showContact: false,
+      imagesource: '"@/assets/" + annonce.photo'
     }
 
   },
   methods:{ send: function(){
     this.showContact = true
   }
-  }
-};
+  },
+ };
 
 </script>
 
