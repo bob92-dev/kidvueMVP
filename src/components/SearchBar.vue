@@ -1,51 +1,78 @@
 <template>
-<div>
-  <router-link :to="{ name: 'uploader' }">Ajouter une annonce</router-link>
-  <div class="form">
-    <form>
-      <div class="formgroup">
-        <input
-          v-model="materiel"
-          type="text"
-          id="materiel"
-          placeholder="Quel matériel cherchez-vous ?"
-          required
-        />
-      </div>
-      <div class="formgroup">
-        <input v-model="lieu" type="text" id="lieu" placeholder="Où allez-vous ?" required />
-      </div>
-      <div class="formgroup">
-        <label for="depart">Quand partez-vous ?</label>
-        <input
-          v-model="datedepart"
-          type="date"
-          id="datedepart"
-          :@click="datechecker"
-          required
-        />
-      </div>
-      <div class="formgroup">
-        <label for="depart">Jusqu'à quand ?</label>
-        <input v-model="dateretour" type="date" id="dateretour" required/>
-      </div>
-      <button class="btn btn-primary" type="submit" v-on:click.prevent>Rechercher</button>
-    </form>
-    <div>{{ materiel }}</div>
-  </div>
-</div>  
+         <router-link :to="{ name: 'uploader' }">Ajouter une annonce</router-link>
+      <main id="site-content" role="main">
+            <div class="hero shift-with-hiw js-hero">
+                <div class="hero__background" data-native-currency="GBP" aria-hidden="true">
+                    <div class="air-slideshow hero-slideshow">
+                        <img alt="Paris-ac2c9c35b05b19e65af7c8eee89f2fae" src="voitureKOT.jpg" width="100%" />
+                    </div>
+                </div>
+                <div class="hero__content page-container page-container-full text-center">
+                    <div class="va-container va-container-v va-container-h">
+                        <div class="va-middle">
+                            <h2 class="text-branding text-jumbo text-contrast space-1 hero__heading">
+                                Voyagez léger
+                            </h2>
+                            <div class="h4 text-contrast space-4">
+                                Louez une poussette à l'arrivée.
+                            </div>
+                        </div>
+                    </div>
+                    <div class="hero__content-footer hide-sm">
+                        <div class="col-sm-12">
+                            <div id="searchbar">
+                              <label class="searchbar__material">
+                                 <div class="searchbar">
+                                                <select v-model="select">
+                                                <option v-bind:key="index" v-for="(materiel, index) in materiels">{{ materiel }}</option>
+                                               </select>
+                                    <form id="searchbar-form" action="/s">
+                                        <div class="searchbar__input-wrapper">
+                                            <label class="searchbar__location">
+                                              <input v-model="lieu" id="lieu" type="text" class="input-large input-contrast" autocomplete="off" name="location" placeholder="Où voulez-vous aller?" required/>
+                                                                                                                                       
+                                </label>
+                                            
+                                            <label class="searchbar__date" for="depart">
+                                               <span class="screen-reader-only">
+                                                    Sélectionnez la date de départ
+                                                </span>
+                                               <input v-model="datedepart" type="date" id="datedepart" :@click="datechecker" required />
+                                            </label >
+                                               
+                                             <label class="searchbar__date" for="retour">
+                                               <span class="screen-reader-only">
+                                                    Sélectionnez la date de départ
+                                                </span>
+                                             <input v-model="dateretour" type="date" id="dateretour" required />
+                                            </label>  
+                                        </div>
+                                            <button id="submit_location" type="submit" class="searchbar__submit btn btn-primary btn-large" v-on:click.prevent>
+                                            Rechercher
+                                            </button>
+                                    </form>
+                              </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+   </main>
+    
+   
 </template>
 
 <script>
 export default {
-    data() {
+  data() {
     return {
-      materiel: "",
       lieu: "",
       datedepart: "",
-      dateretour: ""
-    }
- } 
+      dateretour: "",
+      select: "",
+      materiels: ["poussette", "lit parapluie", "siege auto"]
+    };
+  }
 };
 </script>
 
