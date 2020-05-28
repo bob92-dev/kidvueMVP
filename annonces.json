@@ -1,19 +1,19 @@
 {
-    "annonces": [
-        {
+    "annonces": [{
             "id": 1,
             "user": {
                 "id": "abc123",
                 "name": "Adam"
             },
             "category": "poussette",
-            "marque":"safetyfirst",
+            "marque": "safetyfirst",
             "titre": "Vends super poussette",
+            "prix": "3€/j",
             "description": "Yay felines!",
             "ville": "Meow Town",
             "date": "2019-01-03T21:54:00.000Z",
             "disponibility": true,
-            "photo" : "mapoussette.jpeg"    
+            "photo": "mapoussette.jpeg"
         },
         {
             "id": 2,
@@ -22,13 +22,14 @@
                 "name": "babar"
             },
             "category": "poussette",
-            "marque":"safetyfirst",
+            "marque": "safetyfirst",
             "titre": "Vends la lllllllalalallalalalala superpoussette",
+            "prix": "5€/j",
             "description": "hooooiiiiihhaaaa ma superpousette!",
             "ville": "dans ton uc",
             "date": "2019-01-03T21:54:00.000Z",
             "disponibility": true,
-            "photo" : "mapoussetteetmonbebe.jpeg"        
+            "photo": "mapoussetteetmonbebe.jpeg"
         },
         {
             "id": 3,
@@ -37,13 +38,14 @@
                 "name": "antoine"
             },
             "category": "poussette",
-            "marque" : "chicko",
+            "marque": "chicko",
             "titre": "olala ma superpoussette",
             "description": "hooooiiiiihhaaaa ma superpousette!",
+            "prix": "10€/j",
             "ville": "antoinetown",
             "date": "2019-01-03T21:54:00.000Z",
             "disponibility": true,
-            "photo" : "mapoussetteetmonbebe.jpeg"        
+            "photo": "mapoussetteetmonbebe.jpeg"
         }
     ]
 }
