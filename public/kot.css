@@ -2711,6 +2711,9 @@ button {
     margin: 0 0 40px 50px;
     margin: auto;
     margin-top: 15px;
+    color: rgb(0, 60, 255);
+    background-color: lightblue;
+    margin-left: 25px;
 }
 
 .button-2 a {

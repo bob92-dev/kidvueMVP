@@ -11,7 +11,7 @@
           <h3>{{annonce.titre}}</h3>
           <p class="date">{{annonce.marque}}</p>
           <p class="description">{{annonce.description}}</p>
-          <button @click="send" class="btn btn-info ">Contacter le propriétaire</button>>
+          <button @click="send" class="button-2 btn-info ">Contacter le propriétaire</button>
           <Contact v-if="showContact"/>
             </div>
       </div>
