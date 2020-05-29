@@ -3,7 +3,7 @@
      <div class="container">
       <div class="flipper">
         <div class="front">
-          <img v-bind:src='imagesource'>
+          <img :src="imagesource" />
           <p class="caption">{{annonce.titre}}</p>
           <p class="caption"> {{ annonce.prix }}</p>
         </div>
@@ -11,7 +11,7 @@
           <h3>{{annonce.titre}}</h3>
           <p class="date">{{annonce.marque}}</p>
           <p class="description">{{annonce.description}}</p>
-          <button @click="send" class="btn btn-info">Contacter le propriétaire</button>>
+          <button @click="send" class="btn btn-info ">Contacter le propriétaire</button>>
           <Contact v-if="showContact"/>
             </div>
       </div>
@@ -26,17 +26,16 @@ import Contact from "@/components/Contact.vue";
 
 export default {
   components: {
-    Contact
+    Contact,
   },
   props: {
     annonce: Object,
     },
-    data() {
-   const imagesource = require(`@/assets/${this.annonce.photo}`)
+  data() {
+    const imagesource = require(`@/assets/${this.annonce.photo}`)
     return {
       showContact: false,
       imagesource
-           
     }
 
   },
@@ -44,7 +43,7 @@ export default {
     this.showContact = true
   }
   }
-  };
+ };
 
 </script>
 
@@ -139,6 +138,5 @@ h1 {
 #content {
   text-align: center;
 }
-
 
 </style>
