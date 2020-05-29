@@ -4,7 +4,7 @@
       <div class="flipper">
         <div class="front">
           <img :src="imagesource" />
-          <p class="caption">{{annonce.titre}}</p>
+          <h3 class="caption">{{annonce.titre}}</h3>
           <p class="caption"> {{ annonce.prix }}</p>
         </div>
         <div class="back">
@@ -62,7 +62,7 @@ body {
 }
 
 img {
-  width: 100%;
+  height:175px;
 }
 
 a {
@@ -70,16 +70,16 @@ a {
 }
 
 .caption,
-h1,
+h3,
 .date {
   margin: 0;
   text-align: center;
 }
 
 .caption,
-h1 {
-  font-family: "Reenie Beanie", sans-serif;
-  font-size: 2em;
+h3 {
+  font-family: "Papyrus", sans-serif;
+  font-size: 1em;
   padding: 10px 10px 0 10px;
 }
 

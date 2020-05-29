@@ -61,7 +61,7 @@
             "ville": "Honfleur",
             "date": "2019-01-03T21:54:00.000Z",
             "disponibility": true,
-            "photo": "poussette4.jpg"
+            "photo": "poussette4.png"
         },
         {
             "id": 5,
@@ -77,7 +77,7 @@
             "ville": "Caen",
             "date": "2019-01-03T21:54:00.000Z",
             "disponibility": true,
-            "photo": "poussette5.jpg"
+            "photo": "poussette5.jpeg"
         }
     ]
 }
