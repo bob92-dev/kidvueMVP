@@ -7,10 +7,10 @@
             },
             "category": "poussette",
             "marque": "safetyfirst",
-            "titre": "Vends super poussette",
+            "titre": "Loue super poussette",
             "prix": "3€/j",
-            "description": "Yay felines!",
-            "ville": "Meow Town",
+            "description": "Super poussette trois roues",
+            "ville": "Paris",
             "date": "2019-01-03T21:54:00.000Z",
             "disponibility": true,
             "photo": "poussette1.jpg"
@@ -21,12 +21,12 @@
                 "id": "23",
                 "name": "babar"
             },
-            "category": "lit parapluie",
-            "marque": "safetyfirst",
-            "titre": "Vends la lllllllalalallalalalala superpoussette",
+            "category": "poussette",
+            "marque": "Mac Laren",
+            "titre": "Loue superpoussette",
             "prix": "5€/j",
-            "description": "hooooiiiiihhaaaa ma superpousette!",
-            "ville": "dans ton uc",
+            "description": "Mon enfant ne l'utilise plus, je vous la propose à la loctaion!",
+            "ville": "Paris",
             "date": "2019-01-03T21:54:00.000Z",
             "disponibility": true,
             "photo": "poussette2.jpg"
@@ -37,15 +37,47 @@
                 "id": "2323",
                 "name": "antoine"
             },
-            "category": "siege auto",
-            "marque": "chicko",
+            "category": "poussette",
+            "marque": "yoyo",
             "titre": "olala ma superpoussette",
-            "description": "hooooiiiiihhaaaa ma superpousette!",
+            "description": "Je loue ma poussette",
             "prix": "10€/j",
             "ville": "antoinetown",
             "date": "2019-01-03T21:54:00.000Z",
             "disponibility": true,
             "photo": "poussette3.jpg"
+        },
+        {
+            "id": 4,
+            "user": {
+                "id": "25689",
+                "name": "julien"
+            },
+            "category": "poussette",
+            "marque": "Chicco",
+            "titre": "Loue poussette",
+            "description": "Je loue une superpoussette chicco en tres bon etat!",
+            "prix": "10€/j",
+            "ville": "Honfleur",
+            "date": "2019-01-03T21:54:00.000Z",
+            "disponibility": true,
+            "photo": "poussette4.jpg"
+        },
+        {
+            "id": 5,
+            "user": {
+                "id": "29",
+                "name": "boris"
+            },
+            "category": "poussette",
+            "marque": "Chicco",
+            "titre": "Loue poussette",
+            "description": "Je loue une superpoussette chicco en tres bon etat!",
+            "prix": "8€/j",
+            "ville": "Caen",
+            "date": "2019-01-03T21:54:00.000Z",
+            "disponibility": true,
+            "photo": "poussette5.jpg"
         }
     ]
 }
