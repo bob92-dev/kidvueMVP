@@ -5,6 +5,7 @@ import Uploader from "@/views/Uploader.vue";
 import DetailAnnonce from "@/views/DetailAnnonce.vue";
 import Inscription from "@/views/Inscription.vue";
 import Connexion from "@/views/Connexion.vue";
+import Deconnexion from "@/views/Deconnexion.vue"
 
 Vue.use(Router)
 
@@ -36,6 +37,11 @@ export default new Router({
             path: '/connexion',
             name: 'connexion',
             component: Connexion
+        },
+        {
+            path: '/deconnexion',
+            name: 'deconnexion',
+            component: Deconnexion
         },
     ]
 

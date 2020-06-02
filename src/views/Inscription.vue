@@ -1,6 +1,6 @@
 <template>
     <div>
-        sqogjaoibjazijegoagjhoea
+        page inscription
     </div>
 </template>
 

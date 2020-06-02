@@ -1,6 +1,6 @@
 <template>
     <div>
-        page connexion
+        page deconncxion
     </div>
     
 </template>
