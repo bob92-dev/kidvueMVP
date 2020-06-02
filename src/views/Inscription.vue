@@ -1,31 +1,35 @@
 <template>
-    <div class="container">
-        <h1>Inscription</h1>
-        <form>
-            <div class ="form-group">
-                <label for="email"> E-mail</label>
-                <input type="email" id="mail" class="form-control">
-            </div>
-
-             <div class ="form-group">
-                <label for="password"> Mot de passe</label>
-                <input type="password" id="password" class="form-control">
-            </div>
-
-             <div class ="form-group">
-                <label for="text"> Confirmez le mot de passe</label>
-                <input type="password" id="conf-password" class="form-control">
-            </div>
-
-            
-        </form>
+    <div class="connexion">
+        <p>Inscription</p>
+        <input type="email" v-model="email" placeholder="Email"><br>
+        <input type="password" v-model="password" placeholder="Mot de passe">
+        <button @click="signUp">Inscription</button>
+        <span>Déjà inscrit?<router-link :to= "{name: 'connexion' }">Connexion</router-link></span>
     </div>
 </template>
 
 <script>
+import firebase from 'firebase';
 
 export default {
-    
+    name: 'signUp',
+    data(){
+        return{
+            email: '',
+            password: ''
+        }
+    },
+    methods: {
+        signUp: function() {
+            firebase.auth().createUserWithEmailAndPassword(this.email, this.password).then(
+                function (user){
+                    alert(user+"Votre compte a été créé avec succès.")
+            },
+                function (err) {
+                    alert("Oups!" + err.message)
+            });
+        }
+    }
 }
 </script>
 
