@@ -3,6 +3,8 @@ import Router from 'vue-router'
 import Listeannonces from "@/views/Listeannonces.vue";
 import Uploader from "@/views/Uploader.vue";
 import DetailAnnonce from "@/views/DetailAnnonce.vue";
+import Inscription from "@/views/Inscription.vue";
+import Connexion from "@/views/Connexion.vue";
 
 Vue.use(Router)
 
@@ -24,9 +26,17 @@ export default new Router({
             name: 'detail-annonce',
             component: DetailAnnonce,
             props: true
-          },
-
-
+        },
+        {
+            path: '/inscription',
+            name: 'inscription',
+            component: Inscription
+        },
+        {
+            path: '/connexion',
+            name: 'connexion',
+            component: Connexion
+        },
     ]
 
 })
