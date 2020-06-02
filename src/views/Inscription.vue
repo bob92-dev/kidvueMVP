@@ -1,9 +1,9 @@
 <template>
     <div class="connexion">
         <p>Inscription</p>
-        <input type="email" v-model="email" placeholder="Email"><br>
-        <input type="password" v-model="password" placeholder="Mot de passe">
-        <button @click="signUp">Inscription</button>
+        <input  class= "input" type="email" v-model="email" placeholder="Email"><br>
+        <input  class= "input" type="password" v-model="password" placeholder="Mot de passe">
+        <button class="perso" @click="signUp">Inscription</button>
         <span>Déjà inscrit?<router-link :to= "{name: 'connexion' }">Connexion</router-link></span>
     </div>
 </template>
@@ -34,9 +34,11 @@ export default {
 </script>
 
 <style scoped>
-.container {
-    margin-top: 10;
-  position: relative;
-  width: 45%;
+.perso {
+    background-color: aqua;
+}
+.input {
+   
+  width: 15%;
 }
 </style>
