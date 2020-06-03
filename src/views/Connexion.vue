@@ -22,6 +22,7 @@ export default {
     
     methods: {
         signIn: function() {
+            
             firebase.auth().signInWithEmailAndPassword(this.email, this.password).catch(function(error) {
                 // Handle Errors here.
                 var errorCode = error.code;
@@ -29,6 +30,8 @@ export default {
                 alert (errorCode + errorMessage);
                 });
             alert( "vous êtes connecté avec succès!! ");   
+            var user = firebase.auth().currentUser;
+            console.log("user's id c'est: "+user.uid);
         }
     
     }
