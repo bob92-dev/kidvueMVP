@@ -6,6 +6,7 @@ import DetailAnnonce from "@/views/DetailAnnonce.vue";
 import Inscription from "@/views/Inscription.vue";
 import Connexion from "@/views/Connexion.vue";
 import Deconnexion from "@/views/Deconnexion.vue";
+
 import Profil from "@/views/Profil.vue"
 
 Vue.use(Router)

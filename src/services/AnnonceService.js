@@ -14,6 +14,10 @@ export default {
     return apiClient.get("/annonces");
     },
     getAnnonce(id){
-        return apiClient.get('/events/' + id)
+        return apiClient.get('/annonces/' + id)
+    },
+    postAnnonce(annonce){
+        return apiClient.post('/annonces', annonce)
     }
+
 }
