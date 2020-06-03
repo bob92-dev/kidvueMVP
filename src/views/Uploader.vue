@@ -37,13 +37,8 @@
         <input v-model="annonce.prix" type="text" placeholder="Indiquez votre tarif journalier" />
       </div>
 
-        <UploadImage v-model="annonce.photo" />
-    
-
-            <input type="submit" class="button -fill-gradient" value="Submit" />
-    </form>
-
-      <p>Upload an image to Firebase:</p>
+                
+      <p>Chargez votre image</p>
       <input type="file" @change="previewImage" accept="image/*" >
  
     <div>
@@ -55,6 +50,8 @@
         <img class="preview" :src="picture">
         <br>
       <button @click="onUpload">Upload</button>
+
+        <input type="submit" class="button -fill-gradient" value="Submit" />
     </div>
 
   </div>
