@@ -6,7 +6,7 @@
     <div id="nav">
       <searchbar />
       <router-view />
-     </div>
+    </div>
   </div>
 </template>
 
@@ -14,16 +14,14 @@
 import searchbar from "@/components/SearchBar.vue";
 import Header from "@/components/Header.vue";
 
-import Upload from './components/Upload.vue'
+import Upload from "./components/Upload.vue";
 export default {
   components: {
-    searchbar,   
+    searchbar,
     Header,
     Upload
-
   }
 };
 </script>
 
-<style scoped>
-</style>
+<style scoped></style>
