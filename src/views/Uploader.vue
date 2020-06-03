@@ -47,20 +47,20 @@
     </div>
 
     <div v-if="imageData!=null">
-        <img class="preview" :src="picture">
+        <img  class="preview" :src="picture">
         <br>
       <button @click="onUpload">Upload</button>
 
-        <input type="submit" class="button -fill-gradient" value="Submit" />
     </div>
-
+``    <input type="submit" class="button -fill-gradient" value="Submit" />
+  </form>
   </div>
+
 </template>
 
 <script>
-import Datepicker from "vuejs-datepicker";
 import firebase from 'firebase';
-
+import Datepicker from "vuejs-datepicker";
 
 export default {
 components: {
@@ -70,7 +70,11 @@ components: {
   data(){
      return {
       annonce: this.creationObjetAnnonce(),
-      categories: this.$store.state.categories
+      categories: this.$store.state.categories,
+      imageData: null,
+      picture: null,
+      uploadValue: 0
+
       }
   },
   methods:{
@@ -79,10 +83,9 @@ components: {
     },
     creationObjetAnnonce(){
       const user = this.$store.state.user;
-      const id = Math.floor(Math.random() * 10000000);
-      
+       
       return {
-            id: id,
+            id: '',
             categorie: '',
             organizer: user,
             titre: '',
@@ -90,14 +93,44 @@ components: {
             ville: '',
             date: '',
             prix: '',
-            photo: '',
-            
+            photo: ''            
          }
+     },
+     previewImage(event) {
+      this.uploadValue = 0;
+      this.picture = null;
+      this.imageData = event.target.files[0];
+    },
+     onUpload() {
+      this.picture = null;
+       const storageRef = firebase
+        .storage()
+        .ref(`${this.imageData.name}`)
+        .put(this.imageData);
+      
+      storageRef.on(
+        `state_changed`,
+        snapshot => {
+          this.uploadValue =
+            (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
+        },
+        error => {
+          console.log(error.message);
+        },
+        () => {
+          this.uploadValue = 100;
+          storageRef.snapshot.ref.getDownloadURL().then(url => {
+            this.picture = url;
+            this.annonce.photo = url;
+            });
+          
+        }
+      )
+      }
      }
-  }
- 
-};
+  };
 </script>
+
 <style scoped>
 .field {
       margin-bottom: 24px;
