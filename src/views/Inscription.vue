@@ -1,10 +1,10 @@
 <template>
-    <div class="connexion">
-        <p>Inscription</p>
+    <div class="center">
+        <p>Inscrivez-vous:</p>
         <input  class= "input" type="email" v-model="email" placeholder="Email"><br>
-        <input  class= "input" type="password" v-model="password" placeholder="Mot de passe">
-        <button class="perso" @click="signUp">Inscription</button>
-        <span>Déjà inscrit?<router-link :to= "{name: 'connexion' }">Connexion</router-link></span>
+        <input  class= "input" type="password" v-model="password" placeholder="Mot de passe"><br>
+        <button type="button" class="btn btn-secondary" @click="signUp">Inscrire</button>
+        <span>    Déjà inscrit?  <router-link :to= "{name: 'connexion' }">Connexion</router-link></span>
     </div>
 </template>
 
@@ -34,11 +34,17 @@ export default {
 </script>
 
 <style scoped>
-.perso {
-    background-color: aqua;
-}
+
 .input {
    
-  width: 15%;
+  width: 30%;
+}
+.center {
+
+  margin: auto;
+  margin-top: 30px;
+  width: 50%;
+  border: 1px solid rgb(0, 0, 0);
+  padding: 10px;
 }
 </style>
