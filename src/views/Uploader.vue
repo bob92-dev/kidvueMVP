@@ -37,17 +37,38 @@
         <input v-model="annonce.prix" type="text" placeholder="Indiquez votre tarif journalier" />
       </div>
 
+        <UploadImage v-model="annonce.photo" />
+    
+
             <input type="submit" class="button -fill-gradient" value="Submit" />
     </form>
+
+      <p>Upload an image to Firebase:</p>
+      <input type="file" @change="previewImage" accept="image/*" >
+ 
+    <div>
+      <p>Progress: {{uploadValue.toFixed()+"%"}}
+      <progress id="progress" :value="uploadValue" max="100" ></progress>  </p>
+    </div>
+
+    <div v-if="imageData!=null">
+        <img class="preview" :src="picture">
+        <br>
+      <button @click="onUpload">Upload</button>
+    </div>
+
   </div>
 </template>
 
 <script>
 import Datepicker from "vuejs-datepicker";
+import firebase from 'firebase';
+
 
 export default {
 components: {
-    Datepicker
+    Datepicker,
+    
   },
   data(){
      return {
@@ -62,6 +83,7 @@ components: {
     creationObjetAnnonce(){
       const user = this.$store.state.user;
       const id = Math.floor(Math.random() * 10000000);
+      
       return {
             id: id,
             categorie: '',
