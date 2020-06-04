@@ -3,7 +3,9 @@
         <p>Inscrivez-vous:</p>
         <input  class= "input" type="email" v-model="email" placeholder="Email"><br>
         <input  class= "input" type="password" v-model="password" placeholder="Mot de passe"><br>
-        <button type="button" class="btn btn-secondary" @click="signUp">Inscrire</button>
+         <input  class= "input" type="password" v-model="confirmPassword" placeholder="confirmez mot de passe"><br>
+
+        <button type="button" class="btn btn-secondary" @click="signUp">Valider</button>
         <span>    Déjà inscrit?  <router-link :to= "{name: 'connexion' }">Connexion</router-link></span>
     </div>
 </template>
@@ -16,7 +18,8 @@ export default {
     data(){
         return{
             email: '',
-            password: ''
+            password: '',
+            confirmPassword: ''
         }
     },
     methods: {
@@ -28,6 +31,7 @@ export default {
                 function (err) {
                     alert("Oups!" + err.message)
             });
+            
         }
     }
 }

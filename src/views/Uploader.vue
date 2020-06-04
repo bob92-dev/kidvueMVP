@@ -49,7 +49,9 @@
     <div v-if="imageData!=null">
         <img  class="preview" :src="picture">
         <br>
-      <button @click="onUpload">Upload</button>
+      <button class="btn" @click="onUpload">Upload</button>
+      <button class="btn" @click="writeAnnonceData">test</button>
+      
 
     </div>
 ``    <input type="submit" class="button -fill-gradient" value="Submit" />
@@ -107,7 +109,7 @@ components: {
         .storage()
         .ref(`${this.imageData.name}`)
         .put(this.imageData);
-      
+
       storageRef.on(
         `state_changed`,
         snapshot => {
@@ -123,11 +125,36 @@ components: {
             this.picture = url;
             this.annonce.photo = url;
             });
+
           
         }
       )
       }
-     }
+     },
+
+       writeAnnonceData: function() {
+      var user = firebase.auth().currentUser;
+      var pseudo;
+      var ref = firebase.database().ref('users/' + user.uid + '/pseudo');
+ref.on('value', function(snapshot) {
+  pseudo = snapshot.val();
+  console.log(pseudo);
+});
+    
+      console.log( 'users/' + user.uid);
+          firebase.database().ref('annonces/').set({
+            id: '',
+              categorie: this.categories,
+              organizer: this.pseudo,
+              titre: this.titre,
+              description: this.description,
+              ville: this.ville,
+              date: this.date,
+            prix: this.prix,
+            photo: this.imageData.name    
+          })
+    }
+        
   };
 </script>
 
