@@ -50,7 +50,7 @@
         <img  class="preview" :src="picture">
         <br>
       <button class="btn" @click="onUpload">Upload</button>
-      <button class="btn" @click="writeAnnonceData">test</button>
+      <button class="btn" @click="onCreateAnnonce">test</button>
       
 
     </div>
@@ -71,33 +71,37 @@ components: {
   },
   data(){
      return {
-      annonce: this.creationObjetAnnonce(),
       categories: this.$store.state.categories,
       imageData: null,
       picture: null,
-      uploadValue: 0
+      uploadValue: 0,
+      categorie: '',
+      titre: '',
+      description: '',
+      ville: '',
+      date: '',
+      prix: '',
+      photo: ''   
 
       }
   },
   methods:{
-    creationAnnonce(){
-      this.$store.dispatch('creationAnnonce', this.annonce)
+    onCreateAnnonce () {
+        
+        const annonceData = {
+         titre: this.titre,
+         categorie: this.categories,
+         organizer: this.pseudo,
+         description: this.description,
+         ville: this.ville,
+         date: this.date,
+         prix: this.prix,
+         photo: this.imageData.name,
+        }
+        this.$store.dispatch('createAnnonce', annonceData)
+        this.$router.push('/annonces')
+      }
     },
-    creationObjetAnnonce(){
-      const user = this.$store.state.user;
-       
-      return {
-            id: '',
-            categorie: '',
-            organizer: user,
-            titre: '',
-            description: '',
-            ville: '',
-            date: '',
-            prix: '',
-            photo: ''            
-         }
-     },
      previewImage(event) {
       this.uploadValue = 0;
       this.picture = null;
@@ -124,37 +128,10 @@ components: {
           storageRef.snapshot.ref.getDownloadURL().then(url => {
             this.picture = url;
             this.annonce.photo = url;
-            });
-
-          
+            });   
         }
       )
-      }
-     },
-
-       writeAnnonceData: function() {
-      var user = firebase.auth().currentUser;
-      var pseudo;
-      var ref = firebase.database().ref('users/' + user.uid + '/pseudo');
-ref.on('value', function(snapshot) {
-  pseudo = snapshot.val();
-  console.log(pseudo);
-});
-    
-      console.log( 'users/' + user.uid);
-          firebase.database().ref('annonces/').set({
-            id: '',
-              categorie: this.categories,
-              organizer: this.pseudo,
-              titre: this.titre,
-              description: this.description,
-              ville: this.ville,
-              date: this.date,
-            prix: this.prix,
-            photo: this.imageData.name    
-          })
-    }
-        
+      }   
   };
 </script>
 
