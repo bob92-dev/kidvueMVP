@@ -2,9 +2,9 @@
     
     <form class="center">
         <p>Terminer mon inscription  </p>
-        <input class="input" type="text" v-model="prenom" placeholder="Prénom">
-        <input class="input" type="text" v-model="nom" placeholder="Nom">
-        <input class="input" type="text" v-model="pseudo" placeholder="Pseudo">
+        <input v-model="prenom" class="input" type="text"  placeholder="Prénom">
+        <input v-model="nom" class="input" type="text"  placeholder="Nom">
+        <input v-model="pseudo" class="input" type="text"  placeholder="Pseudo">
 
                     <label>votre date de naissance: 
                       
@@ -18,19 +18,20 @@
                     </label>
      
         <label>Votre adresse: 
-        <input type="text" v-model="adress" placeholder="Adresse complet: 1 rue de paris"></label>
-        <label>Code postal: <input type="text" v-model="codePostal" placeholder="75001"></label>
-        <input class="input" type="text" v-model="ville" placeholder="Ville: Paris"><br>
+        <input v-model="adress" type="text"  placeholder="Adresse complet: 1 rue de paris"></label>
+        <label>Code postal: <input v-model="codePostal" type="text"  placeholder="75001"></label>
+        <input v-model="ville" class="input" type="text"  placeholder="Ville: Paris"><br>
         
         
         
-        <label>Votre numéro de téléphone: <input class="input" type="text" v-model="numeroTelephone" placeholder="0600000000"></label>
-        <button @click='writeUserData' class="btn btn-secondary" >Valider</button>
+        <label>Votre numéro de téléphone: <input v-model="numeroTelephone" class="input" type="text"  placeholder="0600000000"></label>
+        <button @click.prevent='writeUserData' class="btn btn-secondary" >Valider</button>
     </form>
 </template>
 
 <script>
 import firebase from 'firebase';
+
 export default {
     name: 'writeUserData',
 
