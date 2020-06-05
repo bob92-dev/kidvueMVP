@@ -4,13 +4,13 @@
       <div class="flipper">
         <div class="front">
           <img :src="imagesource" />
-          <h3 class="caption">{{annonce.titre}}</h3>
-          <p class="caption"> {{ annonce.prix }}</p>
+          <h3 class="caption">{{advert.title}}</h3>
+          <p class="caption"> {{ advert.price }}</p>
         </div>
         <div class="back">
-          <h3>{{annonce.titre}}</h3>
-          <p class="date">{{annonce.marque}}</p>
-          <p class="description">{{annonce.description}}</p>
+          <h3>{{advert.title}}</h3>
+          <p class="date">{{advert.brand}}</p>
+          <p class="description">{{advert.description}}</p>
           <button @click="send" class="button-2 btn-info ">Contacter le propriétaire</button>
           <Contact v-if="showContact"/>
             </div>
@@ -22,7 +22,27 @@
 </template>
 
 <script>
-import Contact from "@/components/Contact.vue";
+export default {
+    props: ['id'],
+    computed: {
+      advert () {
+        return this.$store.getters.loadedAdvert(this.id)
+      },
+      userIsAuthenticated () {
+        return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+      },
+      userIsCreator () {
+        if (!this.userIsAuthenticated) {
+          return false
+        }
+        return this.$store.getters.user.id === this.advert.creatorId
+      },
+      loading () {
+        return this.$store.getters.loading
+      }
+    }
+  }
+/* import Contact from "@/components/Contact.vue";
 
 export default {
   components: {
@@ -43,7 +63,7 @@ export default {
     this.showContact = true
   }
   }
- };
+ }; */
 
 </script>
 

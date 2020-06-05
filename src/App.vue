@@ -14,13 +14,10 @@
 import searchbar from "@/components/SearchBar.vue";
 import Header from "@/components/Header.vue";
 
-import Upload from './components/Upload.vue'
 export default {
   components: {
     searchbar,   
-    Header,
-    Upload
-
+    Header
   }
 };
 </script>

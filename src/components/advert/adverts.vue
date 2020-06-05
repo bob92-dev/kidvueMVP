@@ -10,7 +10,7 @@
 </template>
 
 <script>
-import Annonce from "@/components/annonce.vue";
+import Annonce from "@/components/advert/advert";
 import AnnonceService from "@/services/AnnonceService.js";
 
 

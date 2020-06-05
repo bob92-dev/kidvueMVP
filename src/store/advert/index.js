@@ -53,11 +53,15 @@ export default {
                         adverts.push({
                             id: key,
                             title: obj[key].title,
+                            category: obj[key].category,
+                            creator: obj[key].creator,
                             description: obj[key].description,
-                            imageUrl: obj[key].imageUrl,
-                            date: obj[key].date,
                             location: obj[key].location,
-                            creatorId: obj[key].creatorId
+                            bookedDate: obj[key].bookedDate,
+                            price: obj[key].price,
+                            publicationDate: obj[key].publicationDate,
+                            brand: obj[key].brand,
+                            //imageUrl: obj[key].imageUrl
                         })
                     }
                     commit('setLoadedAdverts', adverts)
@@ -70,13 +74,17 @@ export default {
                     }
                 )
         },
-        createAdvert({ commit, getters }, payload) {
+        createAdvert({ commit }, payload) {
             const advert = {
                 title: payload.title,
-                location: payload.location,
+                category: payload.category,
+                creator: payload.creator,
                 description: payload.description,
-                date: payload.date.toISOString(),
-                creatorId: getters.user.id
+                location: payload.location,
+                bookedDate: payload.bookedDate,
+                price: payload.price,
+                publicationDate: payload.publicationDate,
+                brand: payload.brand
             }
             let imageUrl
             let key

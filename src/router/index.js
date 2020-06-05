@@ -1,8 +1,8 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Listeannonces from "@/views/Listeannonces.vue";
-import Uploader from "@/views/Uploader.vue";
-import DetailAnnonce from "@/views/DetailAnnonce.vue";
+import adverts from "@/components/advert/adverts";
+import createAdvert from "@/components/advert/createAdvert";
+import advert from "@/components/advert/advert";
 /* import Inscription from "@/views/Inscription.vue";
 import Connexion from "@/views/Connexion.vue"; */
 import Deconnexion from "@/views/Deconnexion.vue";
@@ -16,20 +16,20 @@ Vue.use(Router)
 export default new Router({
     mode: 'history',
     routes: [{
-            path: '/',
+            path: '/annonces',
             name: 'annonces',
-            component: Listeannonces
+            component: adverts
         },
         {
-            path: '/upload',
-            name: 'uploader',
-            component: Uploader
+            path: '/creationannonce',
+            name: 'creationannonce',
+            component: createAdvert
         },
         {
-            path: '/detailannonce/:id',
+            path: '/annonces/:id',
             name: 'detail-annonce',
-            component: DetailAnnonce,
-            props: true
+            props: true,
+            component: advert
         },
         {
             path: '/inscription',

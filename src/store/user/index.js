@@ -91,6 +91,7 @@ export default {
                             fbKeys: {}
                         }
                         commit('setUser', newUser)
+                        alert("Bienvenue" + user.pseudo)
                     }
                 )
                 .catch(
@@ -98,6 +99,7 @@ export default {
                         commit('setLoading', false)
                         commit('setError', error)
                         console.log(error)
+                        alert(error.code + error.message)
                     }
                 )
         },
