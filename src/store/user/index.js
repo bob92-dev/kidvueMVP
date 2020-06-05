@@ -91,13 +91,14 @@ export default {
                             fbKeys: {}
                         }
                         commit('setUser', newUser)
-                        alert("Bienvenue" + user.pseudo)
+                        alert("Bienvenue")
                     }
                 )
                 .catch(
                     error => {
                         commit('setLoading', false)
                         commit('setError', error)
+                        alert(error.code + error.message)
                         console.log(error)
                         alert(error.code + error.message)
                     }
