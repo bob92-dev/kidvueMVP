@@ -6,8 +6,8 @@ import DetailAnnonce from "@/views/DetailAnnonce.vue";
 import Inscription from "@/views/Inscription.vue";
 import Connexion from "@/views/Connexion.vue";
 import Deconnexion from "@/views/Deconnexion.vue";
-
-import Profil from "@/views/Profil.vue"
+import Payment from "@/views/Payment.vue";
+import Profil from "@/views/Profil.vue";
 
 Vue.use(Router)
 
@@ -50,6 +50,11 @@ export default new Router({
             name: 'profil',
             component: Profil
         },
+        {
+            path:'/payment',
+            name : 'payment',
+            component: Payment
+        }
     ]
 
 })
