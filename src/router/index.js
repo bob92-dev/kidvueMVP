@@ -7,7 +7,10 @@ import Inscription from "@/views/Inscription.vue";
 import Connexion from "@/views/Connexion.vue";
 import Deconnexion from "@/views/Deconnexion.vue";
 
-import Profil from "@/views/Profil.vue"
+import Profil from "@/views/Profil.vue";
+import Contact from "@/components/Contact.vue";
+import Nous from "@/components/Nous.vue";
+import Cgv from "@/components/Cgv.vue"
 
 Vue.use(Router)
 
@@ -49,6 +52,21 @@ export default new Router({
             path: '/profil',
             name: 'profil',
             component: Profil
+        },
+        {
+            path: '/contact',
+            name: 'contact',
+            component: Contact
+        },
+        {
+            path: '/nous',
+            name: 'nous',
+            component: Nous
+        },
+        {
+            path: '/cgv',
+            name: 'cgv',
+            component: Cgv
         },
     ]
 

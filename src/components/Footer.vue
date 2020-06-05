@@ -9,17 +9,17 @@
 
     <!-- Grid row -->
     <div class="row">
-      <div class="col-md-3 mb-md-0 mb-3">
-        <router-link class="btn btn-outline-secondary" :to="{ name: 'nous' }">Qui sommes nous?</router-link> 
+               <div class="col-md-3 mb-md-0 mb-3">
+        <router-link class="text-footer" :to="{ name: 'cgv' }">CGV/CGU</router-link>    
       </div>
       <div class="col-md-3 mb-md-0 mb-3">
-         <router-link class="btn btn-outline-secondary" :to="{ name: 'contact' }">Contact</router-link>
+        <router-link class="text-footer" :to="{ name: 'nous' }">Qui sommes nous?</router-link> 
       </div>
-          <div class="col-md-3 mb-md-0 mb-3">
-        <router-link class="btn btn-outline-secondary" :to="{ name: 'cgv' }">CGV/CGU</router-link>    
-        
+      <div class="col-md-3 mb-md-0 mb-3">
+         <router-link class="text-footer" :to="{ name: 'contact' }">Contact</router-link>
       </div>
-      <div><h5 class="text-uppercase">CGV/CGU</h5></div>
+   
+   
     </div>
   </div>
 
@@ -48,9 +48,12 @@ export default {
     width: 100%;
     height: 100px;
     line-height: 200px;
-    background-color: #f5f5f5;
+ 
 }
 .container {
-    height: 150px;
+    height: 50px;
+}
+.text-footer{
+    color:gray;
 }
 </style>

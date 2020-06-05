@@ -1,12 +1,11 @@
 <template>
   <div id="app">
     <Header />
-    <Contact />
-    <Footer />
     <div id="nav">
       <searchbar />
       <router-view />
      </div>
+     <Footer />
   </div>
 </template>
 
