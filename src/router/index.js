@@ -3,9 +3,11 @@ import Router from 'vue-router'
 import Listeannonces from "@/views/Listeannonces.vue";
 import Uploader from "@/views/Uploader.vue";
 import DetailAnnonce from "@/views/DetailAnnonce.vue";
-import Inscription from "@/views/Inscription.vue";
-import Connexion from "@/views/Connexion.vue";
+/* import Inscription from "@/views/Inscription.vue";
+import Connexion from "@/views/Connexion.vue"; */
 import Deconnexion from "@/views/Deconnexion.vue";
+import signUp from '@/components/user/signUp';
+import signIn from '@/components/user/signIn';
 
 import Profil from "@/views/Profil.vue";
 import Contact from "@/components/Contact.vue";
@@ -16,8 +18,7 @@ Vue.use(Router)
 
 export default new Router({
     mode: 'history',
-    routes: [
-        {
+    routes: [{
             path: '/',
             name: 'annonces',
             component: Listeannonces
@@ -36,12 +37,12 @@ export default new Router({
         {
             path: '/inscription',
             name: 'inscription',
-            component: Inscription
+            component: signUp
         },
         {
             path: '/connexion',
             name: 'connexion',
-            component: Connexion
+            component: signIn
         },
         {
             path: '/deconnexion',
