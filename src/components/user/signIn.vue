@@ -4,7 +4,7 @@
         <input v-model="email" class= "input" type="email"  placeholder="Email"><br>
         <input v-model="password" class= "input" type="password"  placeholder="Mot de passe"><br>
         <button  class="btn btn-secondary"  @click="onSignin">Connecter</button>
-        <span>Pas encore inscrit?<router-link :to= "{name: 'signUp' }">Inscrivez vous</router-link></span>
+        <span>Pas encore inscrit?<router-link :to= "{name: 'inscription' }">Inscrivez vous</router-link></span>
     </div>
     
 </template>

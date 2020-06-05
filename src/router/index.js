@@ -6,8 +6,8 @@ import DetailAnnonce from "@/views/DetailAnnonce.vue";
 /* import Inscription from "@/views/Inscription.vue";
 import Connexion from "@/views/Connexion.vue"; */
 import Deconnexion from "@/views/Deconnexion.vue";
-import signUp from '@/components/user/signUp';
-import signIn from '@/components/user/signIn';
+import signUp from '@/components/user/signUp.vue';
+import signIn from '@/components/user/signIn.vue';
 
 import Profil from "@/views/Profil.vue";
 import Contact from "@/components/Contact.vue";

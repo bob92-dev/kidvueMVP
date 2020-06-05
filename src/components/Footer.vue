@@ -43,15 +43,16 @@ export default {
 
 <style scoped>
 .footer{
-    position: absolute;
+    position: flex;
     bottom: 0;
     width: 100%;
     height: 100px;
     line-height: 200px;
+    padding-top: 80px;
  
 }
 .container {
-    height: 50px;
+   
 }
 .text-footer{
     color:gray;

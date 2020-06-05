@@ -7,7 +7,7 @@
          <input  class= "input" type="password" v-model="confirmPassword" :rules="[comparePasswords]" placeholder="confirmez mot de passe"><br>
 
         <button type="button" class="btn btn-secondary" @click="onSignup">Valider</button>
-        <span>    Déjà inscrit?  <router-link :to= "{name: 'signIn' }">Connexion</router-link></span>
+        <span>    Déjà inscrit?  <router-link :to="{ name: 'connexion' }" >Connexion</router-link></span>
         </form>
     </div>
 </template>

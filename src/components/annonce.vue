@@ -3,15 +3,15 @@
      <div class="container">
       <div class="flipper">
         <div class="front">
-          <img :src="imagesource" />
-          <h3 class="caption">{{annonce.titre}}</h3>
+          <img v-bind:src='imagesource' />
+          <p class="caption">{{annonce.titre}}</p>
           <p class="caption"> {{ annonce.prix }}</p>
         </div>
         <div class="back">
           <h3>{{annonce.titre}}</h3>
           <p class="date">{{annonce.marque}}</p>
           <p class="description">{{annonce.description}}</p>
-          <button @click="send" class="button-2 btn-info ">Contacter le propriétaire</button>
+          <button @click="send" class="btn btn-info">Contacter le propriétaire</button>
           <Contact v-if="showContact"/>
             </div>
       </div>
@@ -32,17 +32,16 @@ export default {
     annonce: Object,
     },
   data() {
-    const imagesource = require(`@/assets/${this.annonce.photo}`)
     return {
       showContact: false,
-      imagesource
+      imagesource: '"@/assets/" + annonce.photo'
     }
 
   },
   methods:{ send: function(){
     this.showContact = true
   }
-  }
+  },
  };
 
 </script>
@@ -62,7 +61,7 @@ body {
 }
 
 img {
-  height:175px;
+  width: 100%;
 }
 
 a {
@@ -70,16 +69,16 @@ a {
 }
 
 .caption,
-h3,
+h1,
 .date {
   margin: 0;
   text-align: center;
 }
 
 .caption,
-h3 {
-  font-family: "Papyrus", sans-serif;
-  font-size: 1em;
+h1 {
+  font-family: "Reenie Beanie", sans-serif;
+  font-size: 2em;
   padding: 10px 10px 0 10px;
 }
 
@@ -138,5 +137,6 @@ h3 {
 #content {
   text-align: center;
 }
+
 
 </style>
