@@ -3,7 +3,7 @@
         <p>Connexion</p>
         <input  class= "input" type="email" v-model="email" placeholder="Email"><br>
         <input  class= "input" type="password" v-model="password" placeholder="Mot de passe"><br>
-        <button type="button" class="btn btn-secondary" @click="signIn">Connecter</button>
+        <button type="button" class="btn btn-secondary" @click="onSignin">Connecter</button>
         <span>Pas encore inscrit?<router-link :to= "{name: 'inscription' }">Inscrivez vous</router-link></span>
     </div>
     

@@ -3,9 +3,9 @@
         <p>Inscrivez-vous:</p>
         <input  class= "input" type="email" v-model="email" placeholder="Email"><br>
         <input  class= "input" type="password" v-model="password" placeholder="Mot de passe"><br>
-         <input  class= "input" type="password" v-model="confirmPassword" placeholder="confirmez mot de passe"><br>
+         <input  class= "input" type="password" v-model="confirmPassword" :rules="[comparePasswords]" placeholder="confirmez mot de passe"><br>
 
-        <button type="button" class="btn btn-secondary" @click="signUp">Valider</button>
+        <button type="button" class="btn btn-secondary" @click="onSignup">Valider</button>
         <span>    Déjà inscrit?  <router-link :to= "{name: 'connexion' }">Connexion</router-link></span>
     </div>
 </template>
