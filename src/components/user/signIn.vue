@@ -1,10 +1,10 @@
 <template>
     <div class="center">
         <p>Connexion</p>
-        <input  class= "input" type="email" v-model="email" placeholder="Email"><br>
-        <input  class= "input" type="password" v-model="password" placeholder="Mot de passe"><br>
-        <button type="button" class="btn btn-secondary" @click="onSignin">Connecter</button>
-        <span>Pas encore inscrit?<router-link :to= "{name: 'inscription' }">Inscrivez vous</router-link></span>
+        <input v-model="email" class= "input" type="email"  placeholder="Email"><br>
+        <input v-model="password" class= "input" type="password"  placeholder="Mot de passe"><br>
+        <button  class="btn btn-secondary"  @click="onSignin">Connecter</button>
+        <span>Pas encore inscrit?<router-link :to= "{name: 'signUp' }">Inscrivez vous</router-link></span>
     </div>
     
 </template>
@@ -38,6 +38,7 @@
     methods: {
       onSignin () {
         this.$store.dispatch('signUserIn', {email: this.email, password: this.password})
+      
       },
       onDismissed () {
         this.$store.dispatch('clearError')

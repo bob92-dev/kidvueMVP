@@ -1,12 +1,14 @@
 <template>
     <div class="center">
         <p>Inscrivez-vous:</p>
+        <form @submit.prevent="onSignup">
         <input  class= "input" type="email" v-model="email" placeholder="Email"><br>
         <input  class= "input" type="password" v-model="password" placeholder="Mot de passe"><br>
          <input  class= "input" type="password" v-model="confirmPassword" :rules="[comparePasswords]" placeholder="confirmez mot de passe"><br>
 
         <button type="button" class="btn btn-secondary" @click="onSignup">Valider</button>
-        <span>    Déjà inscrit?  <router-link :to= "{name: 'connexion' }">Connexion</router-link></span>
+        <span>    Déjà inscrit?  <router-link :to= "{name: 'signIn' }">Connexion</router-link></span>
+        </form>
     </div>
 </template>
 
@@ -14,7 +16,6 @@
 
 
 export default {
-    name: 'signUp',
     data(){
         return{
             email: '',
