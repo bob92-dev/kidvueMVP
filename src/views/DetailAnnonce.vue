@@ -3,6 +3,7 @@
 </template>
 <script>
 import AnnonceService from '@/services/AnnonceService.js'
+// import firebase from 'firebase';
 export default {
     props : ['id'],
     data(){
@@ -11,12 +12,21 @@ export default {
         }
     },
     created(){
-    AnnonceService.getAnnonce(this.id).then(response => {
+        /* ref = firebase.database().ref('/annonces/');
+        this.refdb.once('value', function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+                var childKey = childSnapshot.key;
+                var childData = childSnapshot.val();
+                // ...
+                console.log(childKey + " " + childData)
+            });
+        }) */
+     AnnonceService.getAnnonce(this.id).then(response => {
             //this.annonce = response.data
             console.log(response.data)
         }).catch(error=>{
             console.log('ceci est une erreur', error.response)
         })
-    }
+    } 
 }
 </script>

@@ -1,6 +1,6 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import AnnonceService from '@/services/AnnonceService.js'
+import AnnonceService from '../services/AnnonceService.js'
 
 
 Vue.use(Vuex)
@@ -27,7 +27,7 @@ export default new Vuex.Store({
         },
         updatePhoto({ commit }, annonce) {
             commit('SET_PHOTO', annonce)
-            }
+        }
     }
-    
+
 })
