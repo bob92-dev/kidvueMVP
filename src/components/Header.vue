@@ -5,11 +5,11 @@
                     <img src="kids_on_tripLogo.png" class="logoKOT" alt="Logo"/>
                 
                     <div class="comp pull-right hide-host comp-become-a-host ">
-                    <div v-if="connected">
+                    <div v-if="connected!=null">
                      <a class="hdr-btn link-reset lys-link text-white">
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'uploader' }">Louer votre matériel</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'deconnexion' }">Déconnexion</router-link>
-                        <router-link class="btn btn-outline-secondary" :to="{ name: 'profile' }">Profile</router-link>
+                        <router-link class="btn btn-outline-secondary" :to="{ name: 'profil' }">Profile</router-link>
                     </a>
                     </div>
                     <div v-else>
@@ -32,9 +32,10 @@ export default {
    
     data(){
         return {
-            connected: false
+            connected: this.$store.getters.user,
+            
         }
-    }
+    },
     
 }
 </script>

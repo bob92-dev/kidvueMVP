@@ -7,12 +7,13 @@ import DetailAnnonce from "@/views/DetailAnnonce.vue";
 import Connexion from "@/views/Connexion.vue"; */
 import Deconnexion from "@/views/Deconnexion.vue";
 import signUp from '@/components/user/signUp.vue';
-import signIn from '@/components/user/signIn.vue';
+import signIn from '@/components/user/signIn';
 
 import Profil from "@/views/Profil.vue";
 import Contact from "@/components/Contact.vue";
 import Nous from "@/components/Nous.vue";
-import Cgv from "@/components/Cgv.vue"
+import Cgv from "@/components/Cgv.vue";
+import Home from "@/views/Home.vue";
 
 Vue.use(Router)
 
@@ -20,6 +21,12 @@ export default new Router({
     mode: 'history',
     routes: [{
             path: '/',
+            name: 'home',
+            component: Home
+
+        },
+        {
+            path: '/annonces',
             name: 'annonces',
             component: Listeannonces
         },
