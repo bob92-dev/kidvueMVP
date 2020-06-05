@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <Contact />
-    <upload></upload>
+    <Footer />
     <div id="nav">
       <searchbar />
       <router-view />
@@ -13,13 +13,14 @@
 <script>
 import searchbar from "@/components/SearchBar.vue";
 import Header from "@/components/Header.vue";
+import Footer from "@/components/Footer.vue"
 
-import Upload from './components/Upload.vue'
+
 export default {
   components: {
     searchbar,   
     Header,
-    Upload
+    Footer,
 
   }
 };

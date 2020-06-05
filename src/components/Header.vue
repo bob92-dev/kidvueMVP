@@ -9,6 +9,7 @@
                      <a class="hdr-btn link-reset lys-link text-white">
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'uploader' }">Louer votre matériel</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'deconnexion' }">Déconnexion</router-link>
+                        <router-link class="btn btn-outline-secondary" :to="{ name: 'profile' }">Profile</router-link>
                     </a>
                     </div>
                     <div v-else>
