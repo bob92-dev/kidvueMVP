@@ -1,11 +1,11 @@
-import * as firebase from 'firebase'
+import * as firebase from "firebase";
 
 export default {
-    state: {
-        user: null
-    },
-    mutations: {
-        /* registerUserForMeetup (state, payload) {
+  state: {
+    user: null
+  },
+  mutations: {
+    /* registerUserForMeetup (state, payload) {
           const id = payload.id
           if (state.user.registeredMeetups.findIndex(meetup => meetup.id === id) >= 0) {
             return
@@ -18,12 +18,12 @@ export default {
           registeredMeetups.splice(registeredMeetups.findIndex(meetup => meetup.id === payload), 1)
           Reflect.deleteProperty(state.user.fbKeys, payload)
         }, */
-        setUser(state, payload) {
-            state.user = payload
-        }
-    },
-    actions: {
-        /* registerUserForMeetup ({commit, getters}, payload) {
+    setUser(state, payload) {
+      state.user = payload;
+    }
+  },
+  actions: {
+    /* registerUserForMeetup ({commit, getters}, payload) {
           commit('setLoading', true)
           const user = getters.user
           firebase.database().ref('/users/' + user.id).child('/registrations/')
@@ -55,62 +55,70 @@ export default {
               commit('setLoading', false)
             })
         }, */
-        signUserUp({ commit }, payload) {
-            commit('setLoading', true)
-            commit('clearError')
-            firebase.auth().createUserWithEmailAndPassword(payload.email, payload.password)
-                .then(
-                    user => {
-                        commit('setLoading', false)
-                        const newUser = {
-                            id: user.uid,
-                            //registeredMeetups: [],
-                            fbKeys: {}
-                        }
-                        commit('setUser', newUser)
-                    }
-                )
-                .catch(
-                    error => {
-                        commit('setLoading', false)
-                        commit('setError', error)
-                        console.log(error)
-                    }
-                )
-        },
-        signUserIn({ commit }, payload) {
-            commit('setLoading', true)
-            commit('clearError')
-            firebase.auth().signInWithEmailAndPassword(payload.email, payload.password)
-                .then(
-                    user => {
-                        commit('setLoading', false)
-                        const newUser = {
-                            id: user.uid,
-                            //registeredMeetups: [],
-                            fbKeys: {}
-                        }
-                        commit('setUser', newUser)
-                        alert("Bienvenue")
-                    }
-                )
-                .catch(
-                    error => {
-                        commit('setLoading', false)
-                        commit('setError', error)
-                        alert(error.code + error.message)
-                        console.log(error)
-                    }
-                )
-        },
-        /* autoSignIn ({commit}, payload) {
+    signUserUp({ commit }, payload) {
+      commit("setLoading", true);
+      commit("clearError");
+      firebase
+        .auth()
+        .createUserWithEmailAndPassword(payload.email, payload.password)
+        .then(user => {
+          commit("setLoading", false);
+          const newUser = {
+            id: user.uid,
+            //registeredMeetups: [],
+            fbKeys: {}
+          };
+          console.log(
+            "ceci est le new user uid du create user : " +
+              newUser.id +
+              "cecei est le useruid :" +
+              user.uid
+          );
+          commit("setUser", newUser);
+        })
+        .catch(error => {
+          commit("setLoading", false);
+          commit("setError", error);
+          console.log(error);
+        });
+    },
+    signUserIn({ commit }, payload) {
+      commit("setLoading", true);
+      commit("clearError");
+      firebase
+        .auth()
+        .signInWithEmailAndPassword(payload.email, payload.password)
+        .then(user => {
+          commit("setLoading", false);
+          const newUser = {
+            id: user.uid,
+            //registeredMeetups: [],
+            fbKeys: {}
+          };
+          console.log(
+            "ceci est le new user uid du connexion user : " +
+              newUser.id +
+              "cecei est le useruid :" +
+              user.uid
+          );
+          commit("setUser", newUser);
+          alert("Bienvenue");
+        })
+        .catch(error => {
+          commit("setLoading", false);
+          commit("setError", error);
+          alert(error.code + error.message);
+          console.log(error);
+        });
+    },
+    /* autoSignIn ({commit}, payload) {
           commit('setUser', {
             id: payload.uid,
             registeredMeetups: [],
             fbKeys: {}
           })
         }, */
-        /* fetchUserData ({commit, getters}) {
+    /* fetchUserData ({commit, getters}) {
           commit('setLoading', true)
           firebase.database().ref('/users/' + getters.user.id + '/registrations/').once('value')
             .then(data => {
@@ -134,14 +142,17 @@ export default {
               commit('setLoading', false)
             })
         }, */
-        logout({ commit }) {
-            firebase.auth().signOut()
-            commit('setUser', null)
-        }
-    },
-    getters: {
-        user(state) {
-            return state.user
-        }
+    logout({ commit }) {
+      firebase.auth().signOut();
+      commit("setUser", null);
     }
-}
+  },
+  getters: {
+    user(state) {
+      return state.user;
+    },
+    useUid(state) {
+      return state.user.uid;
+    }
+  }
+};

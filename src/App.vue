@@ -1,37 +1,30 @@
 <template>
-  <div id="app">
+  <v-app>
+    <v-toolbar>
+    <v-toolbar-title> 
+    </v-toolbar-title>     
+      <v-toolbar> 
     <Header />
-   
-    <router-view />
-    <Footer />
+    <main>
 
-  </div>
+    </main>  
+    <v-content>
+     
+    </v-content>
+  </v-app>
 </template>
 
 <script>
-
 import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
-
 
 export default {
+  name: "App",
   components: {
-  
-    Header,
-    Footer,
+   Header
   },
-  computed: {
-    userIsAuthenticated () {
-        return this.$store.getters.user !== null && this.$store.getters.user !== undefined
-      }
-  },
-  methods: {
-      onLogout () {
-        this.$store.dispatch('logout')
-      }
-    }
+
+  data: () => ({
+    //
+  })
 };
 </script>
-
-<style scoped>
-</style>

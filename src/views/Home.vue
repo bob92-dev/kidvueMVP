@@ -1,17 +1,14 @@
 <template>
-<div>
+  <div>
     <SearchBar />
-</div>
+  </div>
 </template>
 <script>
-
 import SearchBar from "@/components/SearchBar.vue";
 export default {
-    components:{
-        SearchBar,
-    }
-}
+  components: {
+    SearchBar
+  }
+};
 </script>
-<style scoped>
-
-</style>
+<style scoped></style>

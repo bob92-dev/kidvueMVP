@@ -1,17 +1,11 @@
 <template>
-    <div>
-        page deconncxion
-    </div>
-    
+  <div>
+    page deconnexion
+  </div>
 </template>
 
 <script>
-
-export default {
-    
-}
+export default {};
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

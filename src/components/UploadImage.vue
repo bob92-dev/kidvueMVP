@@ -6,27 +6,21 @@
     </div>
     <div>
       <p>
-        Progress: {{uploadValue.toFixed()+"%"}}
-        <progress
-          id="progress"
-          :value="uploadValue"
-          max="100"
-        ></progress>
+        Progress: {{ uploadValue.toFixed() + "%" }}
+        <progress id="progress" :value="uploadValue" max="100"></progress>
       </p>
     </div>
-    
-    <div v-if="imageData!=null">
+
+    <div v-if="imageData != null">
       <img class="preview" :src="picture" />
       <br />
       <button @click="onUpload">Upload</button>
-      <button @click="updatePhoto">Ajouter photo au state</button> 
+      <button @click="updatePhoto">Ajouter photo au state</button>
     </div>
   </div>
 </template>
 
 <script>
-import firebase from "firebase";
-
 export default {
   name: "UploadImage",
   data() {
@@ -36,11 +30,7 @@ export default {
       uploadValue: 0
     };
   },
-  methods: {
-    
-     
-    }
-  }
+  methods: {}
 };
 </script>
 
