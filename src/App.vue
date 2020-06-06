@@ -1,9 +1,5 @@
 <template>
   <v-app>
-    <v-toolbar>
-    <v-toolbar-title> 
-    </v-toolbar-title>     
-      <v-toolbar> 
     <Header />
     <main>
 
