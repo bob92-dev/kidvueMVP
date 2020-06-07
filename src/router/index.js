@@ -2,7 +2,7 @@ import Vue from 'vue'
 import Router from 'vue-router'
 import Listeannonces from "@/views/Listeannonces.vue";
 import Uploader from "@/views/Uploader.vue";
-import DetailAnnonce from "@/views/DetailAnnonce.vue";
+import Annonce from "@/components/annonce";
 /* import Inscription from "@/views/Inscription.vue";
 import Connexion from "@/views/Connexion.vue"; */
 //import Deconnexion from "@/views/Deconnexion.vue";
@@ -43,7 +43,7 @@ export default new Router({
         {
             path: '/detailannonce/:id',
             name: 'detail-annonce',
-            component: DetailAnnonce,
+            component: Annonce,
             props: true
         },
         {

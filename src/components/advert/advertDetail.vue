@@ -1,48 +1,63 @@
 <template>
-   <div class="annonce">
-     <div class="container">
-      <div class="flipper">
-        <div class="front">
-          <img v-bind:src='imagesource' />
-          <p class="caption">{{annonce.title}}</p>
-          <p class="caption"> {{ annonce.price }}</p>
-        </div>
-        <div class="back">
-          <h3>{{annonce.title}}</h3>
-          <p class="date">{{annonce.brand}}</p>
-          <p class="description">{{annonce.description}}</p>
-          <button @click="send" class="btn btn-info">Contacter le propriétaire</button>
-    
-            </div>
-      </div>
-    </div>
+   <div class="container">
+     <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Exercitationem laboriosam dolorum fuga error tempore asperiores veritatis ipsa debitis nihil, vitae soluta illum facere nulla. In, id. Rerum officia similique illo.</p>
+   
+
+
+  
   </div>
   
  
 </template>
 
 <script>
-
+export default {
+    props: ['id'],
+    computed: {
+      advert () {
+             console.log("advert" + this.id)
+        return this.$store.getters.loadedAdvert()
+   
+      },
+      userIsAuthenticated () {
+         console.log("advert" + this.id)
+        return this.$store.getters.user !== null && this.$store.getters.user !== undefined
+         
+      },
+      userIsCreator () {
+        if (!this.userIsAuthenticated) {
+          
+          return false
+        }
+        return this.$store.getters.user.id === this.advert.creatorId
+      },
+      loading () {
+        return this.$store.getters.loading
+      }
+    }
+  }
+/* import Contact from "@/components/Contact.vue";
 
 export default {
   components: {
-
+    Contact,
   },
   props: {
     annonce: Object,
     },
   data() {
+    const imagesource = require(`@/assets/${this.annonce.photo}`)
     return {
       showContact: false,
-      imagesource: '"@/assets/"' + this.annonce.photo
+      imagesource
     }
 
   },
   methods:{ send: function(){
     this.showContact = true
   }
-  },
- };
+  }
+ }; */
 
 </script>
 
@@ -61,7 +76,7 @@ body {
 }
 
 img {
-  width: 100%;
+  height:175px;
 }
 
 a {
@@ -69,16 +84,16 @@ a {
 }
 
 .caption,
-h1,
+h3,
 .date {
   margin: 0;
   text-align: center;
 }
 
 .caption,
-h1 {
-  font-family: "Reenie Beanie", sans-serif;
-  font-size: 2em;
+h3 {
+  font-family: "Papyrus", sans-serif;
+  font-size: 1em;
   padding: 10px 10px 0 10px;
 }
 
@@ -137,6 +152,5 @@ h1 {
 #content {
   text-align: center;
 }
-
 
 </style>

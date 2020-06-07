@@ -6,11 +6,39 @@ export default new Vuex.Store({
     user: {
       loggedIn: false,
       data: null
-    }
+    },
+
+    annonces: [{
+      
+      category: "poussette",
+      marque: "safetyfirst",
+      titre: "Loue super poussette",
+      prix: "3€/j",
+      description: "Super poussette trois roues",
+      ville: "Paris",
+      date: "2019-01-03T21:54:00.000Z",
+      disponibility: true,
+      photo: "poussette1.jpg"},
+
+      { category: "poussette",
+      marque: "Mac Laren",
+      titre: "Loue superpoussette",
+      prix: "5€/j",
+      description: "Mon enfant ne l'utilise plus, je vous la propose à la loctaion!",
+      ville: "Paris",
+      date: "2019-01-03T21:54:00.000Z",
+      disponibility: true,
+      photo: "poussette2.jpg"
+
+    } ]
   },
   getters: {
     user(state){
       return state.user
+    },
+
+    annonces(state) {
+      return state.annonces
     }
   },
   mutations: {
