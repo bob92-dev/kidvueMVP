@@ -2,64 +2,67 @@ import Vue from "vue";
 import Vuex from "vuex";
 Vue.use(Vuex);
 export default new Vuex.Store({
-  state: {
-    user: {
-      loggedIn: false,
-      data: null
+    state: {
+        user: {
+            loggedIn: false,
+            data: null
+        },
+
+        annonces: [{
+
+                category: "poussette",
+                marque: "safetyfirst",
+                titre: "Loue super poussette",
+                prix: "3€/j",
+                description: "Super poussette trois roues",
+                ville: "Paris",
+                date: "2019-01-03T21:54:00.000Z",
+                disponibility: true,
+                imageUrl: "https://www.aubert.com/medias/sys_aubert/root/hf5/hca/9125112053790/01127161-1.jpg%22%7D"
+            },
+
+            {
+                category: "poussette",
+                marque: "Mac Laren",
+                titre: "Loue superpoussette",
+                prix: "5€/j",
+                description: "Mon enfant ne l'utilise plus, je vous la propose à la loctaion!",
+                ville: "Paris",
+                date: "2019-01-03T21:54:00.000Z",
+                disponibility: true,
+                photo: "poussette2.jpg"
+
+            }
+        ]
     },
+    getters: {
+        user(state) {
+            return state.user
+        },
 
-    annonces: [{
-      
-      category: "poussette",
-      marque: "safetyfirst",
-      titre: "Loue super poussette",
-      prix: "3€/j",
-      description: "Super poussette trois roues",
-      ville: "Paris",
-      date: "2019-01-03T21:54:00.000Z",
-      disponibility: true,
-      photo: "poussette1.jpg"},
-
-      { category: "poussette",
-      marque: "Mac Laren",
-      titre: "Loue superpoussette",
-      prix: "5€/j",
-      description: "Mon enfant ne l'utilise plus, je vous la propose à la loctaion!",
-      ville: "Paris",
-      date: "2019-01-03T21:54:00.000Z",
-      disponibility: true,
-      photo: "poussette2.jpg"
-
-    } ]
-  },
-  getters: {
-    user(state){
-      return state.user
+        annonces(state) {
+            return state.annonces
+        }
     },
-
-    annonces(state) {
-      return state.annonces
-    }
-  },
-  mutations: {
-    SET_LOGGED_IN(state, value) {
-      state.user.loggedIn = value;
+    mutations: {
+        SET_LOGGED_IN(state, value) {
+            state.user.loggedIn = value;
+        },
+        SET_USER(state, data) {
+            state.user.data = data;
+        }
     },
-    SET_USER(state, data) {
-      state.user.data = data;
+    actions: {
+        fetchUser({ commit }, user) {
+            commit("SET_LOGGED_IN", user !== null);
+            if (user) {
+                commit("SET_USER", {
+                    displayName: user.displayName,
+                    email: user.email
+                });
+            } else {
+                commit("SET_USER", null);
+            }
+        }
     }
-  },
-  actions: {
-    fetchUser({ commit }, user) {
-      commit("SET_LOGGED_IN", user !== null);
-      if (user) {
-        commit("SET_USER", {
-          displayName: user.displayName,
-          email: user.email
-        });
-      } else {
-        commit("SET_USER", null);
-      }
-    }
-  }
 });
