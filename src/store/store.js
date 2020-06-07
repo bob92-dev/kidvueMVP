@@ -52,9 +52,10 @@ export default new Vuex.Store({
         SET_USER(state, data) {
             state.user.data = data;
         },
-        /* SET_ANNONCES(state, data){
-          state.annonces.data = data;
-        } */
+         SET_ANNONCES(state, payload){
+          state.annonces.push(payload)
+          
+          }
     },
     actions: {
         fetchUser({ commit }, user) {
@@ -68,7 +69,7 @@ export default new Vuex.Store({
                 commit("SET_USER", null);
             }
         },
-        displayAdverts() {
+        displayAdverts({commit}) {
             //var titre;
             var ref = firebase.database().ref('annonces');
             ref.once('value', function(snapshot) {
@@ -77,6 +78,17 @@ export default new Vuex.Store({
                     var childData = childSnapshot.val();
                     // annonces.push(childData);
                     console.log(childKey + " et " + childData.prix)
+                    const annonce = {
+                      category: childData.category,
+                      marque: childData.marque,
+                      titre: childData.titre,
+                      prix: childData.prix,
+                      description: childData.description,
+                      ville: childData.ville,
+                      date: childData.date,
+                      disponibility: true,
+                      imageUrl: childData.imageUrl}
+                      commit('SET_ANNONCES',annonce)
 
                 });
             });
