@@ -43,6 +43,7 @@
                 <div class="col-md-8 offset-md-4">
                   <button type="submit" class="btn btn-primary">Login</button>
                 </div>
+               <span>Pas encore inscrit?<router-link :to= "{name: 'inscription' }">Inscrivez vous</router-link></span>
               </div>
             </form>
           </div>
@@ -72,7 +73,7 @@ export default {
         .signInWithEmailAndPassword(this.form.email, this.form.password)
         .then(data => {
             console.log("coucou c'ets la data :" +data);
-          this.$router.replace({ name: "Dashboard" });
+       //   this.$router.replace({ name: "Dashboard" });
         })
         .catch(err => {
           this.error = err.message;

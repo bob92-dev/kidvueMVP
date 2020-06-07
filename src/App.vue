@@ -1,7 +1,6 @@
 <template>
   <div id="app">
     <Header />
-   
     <router-view />
     <Footer />
 
@@ -16,7 +15,6 @@ import Footer from "@/components/Footer.vue";
 
 export default {
   components: {
-  
     Header,
     Footer,
   },

@@ -1,6 +1,6 @@
 <template>
     <div>
-        page deconncxion
+        gérer ici la déconnexion
     </div>
     
 </template>
