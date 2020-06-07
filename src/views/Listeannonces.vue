@@ -6,6 +6,7 @@
       :key="annonce.id"
       :annonce="annonce"
       />
+      <button class="btn btn-secondary" @click="display">afficher annonces</button>
   </div>
 </template>
 
@@ -29,6 +30,11 @@ export default {
     this.Listannonces = this.$store.getters.annonces
   
      },
+     methods:{
+       display(){
+         this.$store.dispatch('displayAdverts')
+       }
+     }
 
   
 

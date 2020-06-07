@@ -1,5 +1,6 @@
 import Vue from "vue";
 import Vuex from "vuex";
+import firebase from "firebase";
 Vue.use(Vuex);
 export default new Vuex.Store({
     state: {
@@ -50,7 +51,10 @@ export default new Vuex.Store({
         },
         SET_USER(state, data) {
             state.user.data = data;
-        }
+        },
+        /* SET_ANNONCES(state, data){
+          state.annonces.data = data;
+        } */
     },
     actions: {
         fetchUser({ commit }, user) {
@@ -63,6 +67,19 @@ export default new Vuex.Store({
             } else {
                 commit("SET_USER", null);
             }
+        },
+        displayAdverts() {
+            //var titre;
+            var ref = firebase.database().ref('annonces');
+            ref.once('value', function(snapshot) {
+                snapshot.forEach(function(childSnapshot) {
+                    var childKey = childSnapshot.key;
+                    var childData = childSnapshot.val();
+                    // annonces.push(childData);
+                    console.log(childKey + " et " + childData.prix)
+
+                });
+            });
         }
     }
 });
