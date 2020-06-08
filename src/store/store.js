@@ -43,6 +43,9 @@ export default new Vuex.Store({
 
         annonces(state) {
             return state.annonces
+        },
+        loggedIn(state){
+            return state.user.loggedIn
         }
     },
     mutations: {

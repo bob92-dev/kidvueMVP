@@ -5,19 +5,24 @@
                     <img src="kids_on_tripLogo.png" class="logoKOT" alt="Logo"/>
                 
                     <div class="comp pull-right hide-host comp-become-a-host ">
-                    <div v-if="connected=!null">
+                    <div v-if="connected">
                      <a class="hdr-btn link-reset lys-link text-white">
-                         Bienvenu {{ userDisplayName }} !!!
+                         Bienvenue {{ userDisplayName }} !!!
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'creationAnnonce' }">Louer votre matériel</router-link>
                         <button class="btn btn-outline-secondary" @click="deconnexion" >Déconnexion</button>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'profil' }">Profil</router-link>
-                    </a>
+                        </a>
+                        
                     </div>
                     <div v-else>
                     <a class="hdr-btn link-reset lys-link text-white">
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'creationAnnonce' }">Louer votre matériel</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'inscription' }">Inscription</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'connexion' }">Connexion</router-link>
+                        
+                       
+                    
+                        
                     </a>
                     </div>
 
@@ -37,9 +42,16 @@ export default {
    
     data(){
         return {
-            connected: this.$store.getters.user,
+            connected: false
             
         }
+    },
+
+     watch: {
+    connected: function () {
+      this.connected = this.$store.getters.loggedIn
+    }
+    
     },
      methods:{
          deconnexion() {
