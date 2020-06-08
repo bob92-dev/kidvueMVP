@@ -63,10 +63,6 @@ import firebase from 'firebase';
 
 
 export default { 
-components: {
-   
-    
-  },
   name:'writeAnnonceData', 
   data(){
      return {
