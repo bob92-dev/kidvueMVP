@@ -1,60 +1,27 @@
 <template>
+  <v-footer color="primary lighten-1" padless>
+    <v-row justify="center" no-gutters>
+      <v-btn color="white" text rounded class="my-2" to="/">ACCUEIL</v-btn>
 
-<!-- Footer -->
-<footer class="page-footer footer">
+      <v-btn color="white" text rounded class="my-2" to="/cgv">CGV</v-btn>
 
-<div class="container"></div>
-  <!-- Footer Links -->
-  <div class="container-fluid text-center text-md-left">
+      <v-btn color="white" text rounded class="my-2" to="/contact">NOUS CONTACTER</v-btn>
 
-    <!-- Grid row -->
-    <div class="row">
-               <div class="col-md-3 mb-md-0 mb-3">
-        <router-link class="text-footer" :to="{ name: 'cgv' }">CGV/CGU</router-link>    
-      </div>
-      <div class="col-md-3 mb-md-0 mb-3">
-        <router-link class="text-footer" :to="{ name: 'nous' }">Qui sommes nous?</router-link> 
-      </div>
-      <div class="col-md-3 mb-md-0 mb-3">
-         <router-link class="text-footer" :to="{ name: 'contact' }">Contact</router-link>
-      </div>
-   
-   
-    </div>
-  </div>
+      <v-btn color="white" text rounded class="my-2" to="/apropos">QUI SOMMES-NOUS ?</v-btn>
 
-      <hr class="clearfix w-100 d-md-none pb-3">
+      <v-btn color="white" text rounded class="my-2" to="/contact"></v-btn>
 
-  <!-- Copyright -->
-  <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://kidsOnTrips.com">KidsOnTrips.com</a>
-  </div>
-  <!-- Copyright -->
 
-</footer>
-<!-- Footer -->
+      <v-col class="primary lighten-2 py-4 text-center white--text" cols="12">
+        {{ new Date().getFullYear() }} —
+        <strong>KidsOnTrip</strong>
+      </v-col>
+    </v-row>
+  </v-footer>
 </template>
 
 <script>
 export default {
-    
-}
+  
+};
 </script>
-
-<style scoped>
-.footer{
-    position: flex;
-    bottom: 0;
-    width: 100%;
-    height: 100px;
-    line-height: 200px;
-    padding-top: 80px;
- 
-}
-.container {
-   
-}
-.text-footer{
-    color:gray;
-}
-</style>
