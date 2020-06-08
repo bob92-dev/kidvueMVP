@@ -5,8 +5,9 @@
                     <img src="kids_on_tripLogo.png" class="logoKOT" alt="Logo"/>
                 
                     <div class="comp pull-right hide-host comp-become-a-host ">
-                    <div v-if="connected!=null">
+                    <div v-if="connected=!null">
                      <a class="hdr-btn link-reset lys-link text-white">
+                         Bienvenu {{ userDisplayName }} !!!
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'creationAnnonce' }">Louer votre matériel</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'deconnexion' }">Déconnexion</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'profil' }">Profil</router-link>
@@ -36,6 +37,11 @@ export default {
             
         }
     },
+        computed:{
+        userDisplayName() {
+            return this.$store.state.user.data.displayName
+        }
+    }
     
 }
 </script>
