@@ -9,7 +9,7 @@
                      <a class="hdr-btn link-reset lys-link text-white">
                          Bienvenu {{ userDisplayName }} !!!
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'creationAnnonce' }">Louer votre matériel</router-link>
-                        <router-link class="btn btn-outline-secondary" :to="{ name: 'deconnexion' }">Déconnexion</router-link>
+                        <button class="btn btn-outline-secondary" @click="deconnexion" >Déconnexion</button>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'profil' }">Profil</router-link>
                     </a>
                     </div>
@@ -28,8 +28,12 @@
 
 
 <script>
+import firebase from 'firebase';
+
 
 export default {
+
+    
    
     data(){
         return {
@@ -37,11 +41,23 @@ export default {
             
         }
     },
-        computed:{
-        userDisplayName() {
-            return this.$store.state.user.data.displayName
-        }
-    }
+     methods:{
+         deconnexion() {
+      firebase
+        .auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace({
+            name: "home",
+            
+          
+          });
+        });
+  
+         }
+     }
+         
+    
     
 }
 </script>

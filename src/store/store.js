@@ -92,6 +92,11 @@ export default new Vuex.Store({
 
                 });
             });
-        }
+        },
+
+        //fonction pour ajouter une annonce dans la BDD
+        //Fonction pour modifier l'annonce dans la BDD
+        //Fonction pour envoyer le profil utilisateur dans la BDD
+        //Fonction pour modifier le profil utilisateur dans la BDD
     }
 });

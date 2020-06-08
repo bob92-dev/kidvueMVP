@@ -1,16 +1,17 @@
 import Vue from 'vue'
 import Router from 'vue-router';
 
-import Home from "@/views/Home.vue";
-import Listeannonces from "@/views/Listeannonces.vue";
-import DetailAnnonce from "@/views/DetailAnnonce";
-import CreationAnnonce from "@/views/CreationAnnonce.vue";
-import InscriptionPage from "@/views/InscriptionPage";
-import ConnexionPage from "@/views/ConnexionPage";
-import ProfilPage from "@/views/ProfilPage.vue";
-import Contact from "@/views/Contact.vue";
-import Apropos from "@/views/Apropos";
-import Cgv from "@/views/Cgv.vue";
+import Home from "./node_modules/@/views/Home.vue";
+import Listeannonces from "./node_modules/@/views/Listeannonces.vue";
+import DetailAnnonce from "./node_modules/@/views/DetailAnnonce";
+import CreationAnnonce from "./node_modules/@/views/CreationAnnonce.vue";
+import InscriptionPage from "./node_modules/@/views/InscriptionPage";
+import ConnexionPage from "./node_modules/@/views/ConnexionPage";
+import DeconnexionPage from "./node_modules/@/views/DeconnexionPage";
+import ProfilPage from "./node_modules/@/views/ProfilPage.vue";
+import Contact from "./node_modules/@/views/Contact.vue";
+import Apropos from "./node_modules/@/views/Apropos";
+import Cgv from "./node_modules/@/views/Cgv.vue";
 
 Vue.use(Router)
 
@@ -48,7 +49,11 @@ export default new Router({
         name: 'connexion',
         component: ConnexionPage
     },
-  
+    {
+        path: '/deconnexion',
+        name: 'deconnexion',
+        component: DeconnexionPage
+    },
     {
         path: '/profil',
         name: 'profil',
