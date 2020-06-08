@@ -1,8 +1,10 @@
 <template>
-    <div>mettre ici le détail de chaque annoncecette page renverra ensuite sur le paiement de la réservation</div>
+    <DetailAnnonce />
 </template>
 <script>
+import DetailAnnonce from '@/components/DetailAnnonce';
 export default {
+    DetailAnnonce
     
 }
 </script>

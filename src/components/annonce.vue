@@ -1,20 +1,21 @@
 <template>
-   <div class="annonce">
+<router-link class="annonce"  :to="{ name: 'DetailAnnonce', params: { id: annonce.id } }">
+   <div >
 
           <img v-bind:src='imageUrl' />
           <p>{{annonce.titre}}</p>
-          <p>{{annonce.price}}</p>
-          <p>{{annonce.imageUrl}}</p>
-
-
-
-          <p>{{annonce.brand}}</p>
+          <p>{{annonce.prix}}</p>
+          <p>{{annonce.marque}}</p>
           <p>{{annonce.description}}</p>
-          <button @click="send" class="btn btn-info">Contacter le propriétaire</button>
+           <p>{{annonce.ville}}</p>
+          <button @click="send" class="bouton">contacter le proprio</button>
+          <br>
+          
+           
 
   </div>
 
- 
+</router-link>
 </template>
 
 <script>
@@ -40,11 +41,20 @@ export default {
     this.showContact = true
   }
   },
+  
  };
 
 </script>
 
 <style scoped>
+
+.bouton {
+  height: 50px;
+background-color: chartreuse;
+color:black;
+border: black solid 2px;
+
+}
 .annonce {
 color:black;
 text-align: center;

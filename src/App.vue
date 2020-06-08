@@ -1,33 +1,27 @@
 <template>
   <div id="app">
     <Header />
-    <router-view />
-    <Footer />
-
+    <Contact />
+    <upload></upload>
+    <div id="nav">
+      <searchbar />
+      <router-view />
+     </div>
   </div>
 </template>
 
 <script>
-
+import searchbar from "@/components/SearchBar.vue";
 import Header from "@/components/Header.vue";
-import Footer from "@/components/Footer.vue";
 
-
+import Upload from './components/Upload.vue'
 export default {
   components: {
+    searchbar,   
     Header,
-    Footer,
-  },
-  computed: {
-    userIsAuthenticated () {
-        return this.$store.getters.user !== null && this.$store.getters.user !== undefined
-      }
-  },
-  methods: {
-      onLogout () {
-        this.$store.dispatch('logout')
-      }
-    }
+    Upload
+
+  }
 };
 </script>
 

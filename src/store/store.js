@@ -10,8 +10,8 @@ export default new Vuex.Store({
         },
 
         annonces: [{
-
-                category: "poussette",
+                id:"tanialasceptique",
+                categorie: "poussette",
                 marque: "safetyfirst",
                 titre: "Loue super poussette",
                 prix: "3€/j",
@@ -19,15 +19,16 @@ export default new Vuex.Store({
                 ville: "Paris",
                 date: "2019-01-03T21:54:00.000Z",
                 disponibility: true,
-                imageUrl: "https://www.aubert.com/medias/sys_aubert/root/hf5/hca/9125112053790/01127161-1.jpg%22%7D"
+                imageUrl: "https://www.aubert.com/medias/sys_aubert/root/hf5/hca/9125112053790/01127161-1.jpg"
             },
 
             {
-                category: "poussette",
+                id:"yuyuanlameprisante",
+                categorie: "poussette",
                 marque: "Mac Laren",
                 titre: "Loue superpoussette",
                 prix: "5€/j",
-                description: "Mon enfant ne l'utilise plus, je vous la propose à la loctaion!",
+                description: "Mon enfant ne l'utilise plus, je vous la propose à la location!",
                 ville: "Paris",
                 date: "2019-01-03T21:54:00.000Z",
                 disponibility: true,
@@ -43,6 +44,10 @@ export default new Vuex.Store({
 
         annonces(state) {
             return state.annonces
+        },
+        annonce(state,){
+          return state.annonce.id
+
         },
         loggedIn(state){
             return state.user.loggedIn
@@ -82,7 +87,8 @@ export default new Vuex.Store({
                     // annonces.push(childData);
                     console.log(childKey + " et " + childData.prix)
                     const annonce = {
-                      category: childData.category,
+                      id: childKey,
+                      category: childData.categorie,
                       marque: childData.marque,
                       titre: childData.titre,
                       prix: childData.prix,

@@ -2,7 +2,7 @@
     
     <form class="center">
         
-      <select v-model="categories" >
+      <select v-model="categorie" >
         <option v-for="categorie in categories" :key="categorie">{{ categorie }}</option>
       </select>
       
@@ -29,6 +29,7 @@ export default {
     data(){
         return{
            categories: ["poussette", "lit parapluie", "siège auto", "autre"],
+           categorie:"",
             titre: "",
             marque: "",
             dateDePublication: "",

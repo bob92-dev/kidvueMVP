@@ -73,9 +73,12 @@
 <script>
 import firebase from "firebase";
 
+
 export default {
   data() {
+    
     return {
+      connected: this.$store.getters.loggedIn,
       form: {
         name: "",
         email: "",
