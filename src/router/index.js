@@ -3,7 +3,7 @@ import Router from 'vue-router';
 
 import Home from "@/views/Home.vue";
 import Listeannonces from "@/views/Listeannonces.vue";
-import DetailAnnonce from "@/views/DetailAnnonce";
+import DetailAnnonce from "@/views/DetailAnnoncePage";
 import CreationAnnonce from "@/views/CreationAnnonce.vue";
 import InscriptionPage from "@/views/InscriptionPage";
 import ConnexionPage from "@/views/ConnexionPage";

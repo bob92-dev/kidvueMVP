@@ -4,7 +4,10 @@
 <script>
 import DetailAnnonce from '@/components/DetailAnnonce';
 export default {
-    DetailAnnonce
+    componenets:{
+       DetailAnnonce
+    }
+ 
     
 }
 </script>

@@ -16,17 +16,7 @@ export default {
         return {
             annonce : {}
         }
-    },
-    created(){
-        ref = firebase.database().ref('/annonces/ ' +this.id);
-        snapshot.ref.
-      })
-      .catch(error => {
-        console.log('There was an error:', error.response)
-      })
-
-
-        
+    }      
         
         /* 
         this.refdb.once('value', function(snapshot) {
@@ -39,5 +29,4 @@ export default {
         }) */
     
     } 
-}
 </script>

@@ -1,5 +1,5 @@
 <template>
-<router-link class="annonce"  :to="{ name: 'DetailAnnonce', params: { id: annonce.id } }">
+<router-link class="annonce"  :to="{ name: 'detailAnnonce', params: { id: annonce.id } }">
    <div >
 
           <img v-bind:src='imageUrl' />
