@@ -3,9 +3,12 @@ import App from "./App.vue";
 import router from "./router";
 import firebase from "firebase";
 import store from '@/store/store';
+import Vuetify from 'vuetify';
+import 'vuetify/dist/vuetify.min.css';
 
 Vue.config.productionTip = false;
 
+Vue.use(Vuetify)
 
 new Vue({
     router,
