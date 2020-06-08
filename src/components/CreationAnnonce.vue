@@ -1,7 +1,7 @@
 <template>
   <div>
     <h1>Remplissez le formulaire pour ajouter une annonce></h1>
-    <form @submit.prevent="creationAnnonce">
+    <form>
       
       <label>Selectionnez une catégorie</label>
       <select v-model="annonce.categorie">
@@ -89,7 +89,7 @@ writeAnnonceData: function() {
            
 console.log( 'users/' + user.uid);
     firebase.database().ref('annonces').set({
-    categorie: this.categorie,
+    categorie: "",
     propriétaire: "",
     titre: this.titre,
     marque: this.marque,
@@ -101,25 +101,7 @@ console.log( 'users/' + user.uid);
     imageUrl: this.picture
                 });
         },
-    creationAnnonce(){
-      this.$store.dispatch('creationAnnonce', this.annonce)
-    },
-    creationObjetAnnonce(){
-      const user = this.$store.state.user;
-       
-      return {
-            categorie: '',
-            propriétaire: user,
-            titre: '',
-            marque:'',
-            description: '',
-            ville: '',
-            dateDePublication: '',
-            dateIndisponibilité:[],
-            prix: '',
-            imageUrl: ''            
-         }
-     },
+   
      previewImage(event) {
       this.uploadValue = 0;
       this.picture = null;

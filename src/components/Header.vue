@@ -42,17 +42,13 @@ export default {
    
     data(){
         return {
-            connected: false
+            connected: this.$store.getters.loggedIn
             
         }
     },
 
-     watch: {
-    connected: function () {
-      this.connected = this.$store.getters.loggedIn
-    }
     
-    },
+
      methods:{
          deconnexion() {
       firebase
