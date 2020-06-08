@@ -99,7 +99,7 @@ export default {
             })
             .then(() => {
              this.$router.replace({ 
-               name: "home" 
+               name: "profil" 
                });
 
 

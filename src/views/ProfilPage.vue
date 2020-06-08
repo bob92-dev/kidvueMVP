@@ -1,14 +1,14 @@
 <template>
     <div>
-    <EditerProfil />
+    <UserProfil />
   </div>      
 </template>
 
 <script>
-import EditerProfil from "@/components/EditerProfil.vue"
+import UserProfil from "@/components/UserProfil.vue"
 export default {
     components:{
-        EditerProfil
+        UserProfil
     }
 
 }
