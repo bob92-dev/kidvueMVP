@@ -1,8 +1,12 @@
 <template>
 
-    <div> 
+    <div>
+    
+     <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+     
+
+    
    <div class="container">
-    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <div class="row">
         <div class="col-xs-12 col-sm-6 col-md-6">
             <div class="well well-sm">
@@ -40,6 +44,7 @@
 import EditerProfil from "@/components/EditerProfil.vue";
 import Message from "@/components/Message.vue";
 export default {    
+        
         data(){
             return {
                 showEditerProfil: false,
