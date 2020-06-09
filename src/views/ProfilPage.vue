@@ -16,14 +16,15 @@
                     </div>
                     <div class="col-sm-6 col-md-8">
                         <h4>{{ userDisplayName }}</h4>
-                        <small> Paris, France <i class="glyphicon glyphicon-map-marker"></i></small>
+                        <small> {{ ville  }}Paris, France <i class="glyphicon glyphicon-map-marker"></i></small>
                         
                         <p>
-                            <i class="glyphicon glyphicon-envelope"></i> Email: yuyuan@hotmail.com 
-                            
+                            <i class="glyphicon glyphicon-envelope"></i> Email: {{ email }} <i>
+                                        
                             <br />
-                            <i class="glyphicon glyphicon-gift"></i> Date de naissance: 02 avril 2020</p>
-                      
+                            <i class="glyphicon glyphicon-gift"></i>Date de naissance:  {{ date }} </p>
+                             <i class="glyphicon glyphicon-gift"></i>Numero de telephone : {{ ville }} </p>
+                             
                         <div class="btn-group">
                             <button  type="button" class="btn btn-outline-secondary ropdown-toggle" @click="changeShowEditerProfil" >Modifiez votre profile</button><br>
                             <button  type="button" class="btn btn-outline-secondary ropdown-toggle" @click="changeShowMessage" >Message</button>
