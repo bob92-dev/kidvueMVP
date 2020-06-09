@@ -1,6 +1,7 @@
 <template>
     
     <form class="center">
+        <p>Terminer mon inscription  </p>
         <input v-model="prenom" class="input" type="text"  placeholder="Prénom">
         <input v-model="nom" class="input" type="text"  placeholder="Nom">
         <input v-model="pseudo" class="input" type="text"  placeholder="Pseudo">
