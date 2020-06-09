@@ -1,6 +1,7 @@
 <template>
     <div>
         components message
+        ok
     </div>
 </template>
 <script>
