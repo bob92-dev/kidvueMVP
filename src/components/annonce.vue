@@ -1,7 +1,6 @@
 <template>
-<router-link class="annonce"  :to="{ name: 'detailAnnonce', params: { id: annonce.id } }">
-   <div >
-
+    <div >
+        <router-link class="annonce"  :to="{ name: 'detailAnnonce', params: { id: annonce.id } }">
           <img v-bind:src='imageUrl' />
           <p>{{annonce.titre}}</p>
           <p>{{annonce.prix}}</p>
@@ -11,11 +10,11 @@
           <button @click="send" class="bouton">contacter le proprio</button>
           <br>
           
-           
+           </router-link>
 
   </div>
 
-</router-link>
+
 </template>
 
 <script>
