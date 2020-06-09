@@ -1,16 +1,37 @@
 <template>
     <div >
-        <router-link class="annonce"  :to="{ name: 'detailAnnonce', params: { id: annonce.id } }">
-          <img v-bind:src='imageUrl' />
-          <p>{{annonce.titre}}</p>
-          <p>{{annonce.prix}}</p>
-          <p>{{annonce.marque}}</p>
-          <p>{{annonce.description}}</p>
-           <p>{{annonce.ville}}</p>
-          <button @click="send" class="bouton">contacter le proprio</button>
-          <br>
-          
-           </router-link>
+      <div class="container">
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+    <div class="row">
+        <div class="col-xs-12 col-sm-6 col-md-6">
+            <div class="well well-sm">
+                <div class="row">
+                    <div class="col-sm-6 col-md-4">
+                        <img v-bind:src='imageUrl' alt="" class="img-rounded img-responsive"/> 
+                    </div>
+                    <div class="col-sm-6 col-md-8">
+                        <h4>{{annonce.titre}}</h4>
+                        <small> {{annonce.ville}} <i class="glyphicon glyphicon-map-marker"></i></small><br/>
+                            <i class="glyphicon glyphicon-euro"></i> Prix: {{annonce.prix}}  <br />
+                            <i class="glyphicon glyphicon-tag"></i> Marque:  {{annonce.marque}} <br/>
+                            <i class="glyphicon glyphicon-list-alt"></i> Description: {{annonce.description}} <br/>
+                             <br/>
+                        <div class="btn-group">
+                            <router-link class="btn btn-outline-secondary "   :to="{ name: 'detailAnnonce', params: { id: annonce.id } }">Détail annonce</router-link>
+                            <button @click="send" type="button" class="btn btn-outline-secondary ropdown-toggle" >contacter le proprio</button>
+                            
+                     </div>
+                        
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        
+    </div>
+</div>
+
+        
 
   </div>
 
@@ -46,19 +67,5 @@ export default {
 </script>
 
 <style scoped>
-
-.bouton {
-  height: 50px;
-background-color: chartreuse;
-color:black;
-border: black solid 2px;
-
-}
-.annonce {
-color:black;
-text-align: center;
-
-}
-
 
 </style>
