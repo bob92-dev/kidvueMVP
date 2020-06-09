@@ -38,7 +38,7 @@
     </div>
 </div>
 <div v-if="showEditerProfil" class="container"><EditerProfil /></div>
-
+<div v-if="showMessage" class="container"><Message /></div>
 </div>
 </template>
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
