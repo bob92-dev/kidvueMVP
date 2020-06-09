@@ -18,12 +18,12 @@
                         <h4>{{ userDisplayName }}</h4>
                         <small> {{ ville  }}Paris, France <i class="glyphicon glyphicon-map-marker"></i></small>
                         
-                        <p>
-                            <i class="glyphicon glyphicon-envelope"></i> Email: {{ email }} <i>
+
+                            <i class="glyphicon glyphicon-envelope"></i><p> Email: {{ email }} <p>
                                         
                             <br />
-                            <i class="glyphicon glyphicon-gift"></i>Date de naissance:  {{ date }} </p>
-                             <i class="glyphicon glyphicon-gift"></i>Numero de telephone : {{ ville }} </p>
+                            <i class="glyphicon glyphicon-gift"></i><p>Date de naissance:  {{ date }} </p>
+                             <i class="glyphicon glyphicon-gift"></i><p>Numero de telephone : {{ ville }} </p>
                              
                         <div class="btn-group">
                             <button  type="button" class="btn btn-outline-secondary ropdown-toggle" @click="changeShowEditerProfil" >Modifiez votre profile</button><br>
@@ -51,7 +51,11 @@ export default {
         data(){
             return {
                 showEditerProfil: false,
-                showMessage:false
+                showMessage:false,
+                email:'',
+                date:'',
+                ville:''
+
             }
         },
         methods:{
