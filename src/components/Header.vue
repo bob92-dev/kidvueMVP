@@ -6,10 +6,10 @@
                 
                     <div class="comp pull-right hide-host comp-become-a-host ">
                     <div v-if="connected.loggedIn == true">
-                          <a class="hdr-btn link-reset lys-link text-white">
-                         Bienvenue {{ userDisplayName.data.DisplayName }} !!!
+                          <a class="black">
+                         Bienvenue {{ userDisplayName }} !
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'creationAnnonce' }">Louer votre matériel</router-link>
-                        <button class="btn btn-outline-secondary" @click="deconnexion" >Déconnexion</button>
+                        <router-link class="btn btn-outline-secondary" :to="{ name: 'deconnexion' }">Déconnexion</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'profil' }">Profil</router-link>
                         </a>
                      
@@ -43,11 +43,16 @@ export default {
     data(){
         return {
             connected: this.$store.getters.user,
-            userDisplayName: this.$store.getters.user
+
             
         }
     },
   
+      computed:{
+        userDisplayName() {
+            return this.$store.state.user.data.displayName
+        }
+    },
 
      methods:{
 deconnexion() {
@@ -74,5 +79,8 @@ deconnexion() {
 </script>
 
 <style scoped>
+  .black{
+    color:black
+  }
 
 </style>
