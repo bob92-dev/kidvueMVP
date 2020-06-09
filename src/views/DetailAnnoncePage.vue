@@ -4,6 +4,7 @@
 <script>
 import DetailAnnonce from '@/components/DetailAnnonce';
 export default {
+    props:['id'],
     components:{
        DetailAnnonce
     }
