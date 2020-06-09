@@ -1,8 +1,8 @@
 <template>
-    <div class="regular-header regular-header--new clearfix hide-sm" id="new-header">
+    <div class="regular-header regular-header--new clearfix hide-sm longueurHeader" id="new-header">
             <div class="comp pull-left">
                 
-                    <img src="kids_on_tripLogo.png" class="logoKOT" alt="Logo"/>
+                    <a href="/"><img src="kids_on_tripLogo.png" class="logoKOT" alt="Logo"/></a>
                 
                     <div class="comp pull-right hide-host comp-become-a-host ">
                     <div v-if="connected.loggedIn == true">
@@ -83,5 +83,14 @@ deconnexion() {
   .black{
     color:black
   }
+  .longueurHeader{
+    position: flex;
+    bottom: 0;
+    width: 100%;
+    height: 90px;
+    line-height: 200px;
+    padding-top: 1px;
+ 
+}
 
 </style>
