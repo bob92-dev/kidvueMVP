@@ -55,7 +55,7 @@ export default {
     mounted:function(){
         this.appelFb()
         //sthis.utilisateurcourant = this.$store.getters.user.data
-        console.log("user" + this.utilisateurcourant.id)
+        console.log("user" + this.utilisateurcourant)
     },
     methods: {
 
