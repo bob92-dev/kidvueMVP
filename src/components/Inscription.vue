@@ -63,7 +63,7 @@
               <button
                 @click="submit"
                 class="bouton"
-              >Aller plus loin dans l'inscription</button>
+              >Continuer</button>
 
               <section v-if="connected.loggedIn">
                 <div class="form-group row">

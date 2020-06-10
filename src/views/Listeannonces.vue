@@ -17,9 +17,11 @@ import Annonce from "@/components/annonce.vue";
 
 
 export default {
+ 
   components: {
     Annonce
   },
+   props : ['categorie'],
      data(){
         return {
             Listannonces:[],
@@ -36,7 +38,8 @@ export default {
       },
      methods:{
        display(){
-         this.$store.dispatch('displayAdverts')
+         
+         this.$store.dispatch('getAnnonce', this.categorie)
        }
      }
 

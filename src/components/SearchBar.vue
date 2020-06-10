@@ -53,7 +53,14 @@
                     </label>
                   </div>
 
-                  <router-link class="searchbar__submit btn btn-primary btn-large" :to="{ name: 'annonces' }">Rechercher</router-link>
+                  <router-link
+                    class="searchbar__submit btn btn-primary btn-large"
+                    :to="{
+                      name: 'annonces',
+                      params: { categorie: this.select }
+                    }"
+                    >Rechercher</router-link
+                  >
                 </form>
               </div>
             </div>
@@ -67,13 +74,16 @@
 <script>
 
 export default {
+  props: {
+    categorie: String,
+    },
   data() {
     return {
       lieu: "",
       datedepart: "",
       dateretour: "",
       select: "",
-      materiels: ["poussette", "lit parapluie", "siege auto"]
+      materiels: ["poussette", "lit parapluie", "siège auto"]
     };
   }
 };
