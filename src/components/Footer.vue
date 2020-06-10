@@ -29,7 +29,7 @@
 
   <!-- Copyright -->
   <div class="footer-copyright text-center py-3">© 2020 Copyright:
-    <a href="https://kidsOnTrips.com">KidsOnTrips.com</a>
+    <a href="https://kidsOnTrips.com">KidsOnTrips.org</a>
   </div>
   <!-- Copyright -->
 

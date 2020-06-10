@@ -52,12 +52,8 @@
                       <input v-model="dateretour" type="date" id="dateretour" required />
                     </label>
                   </div>
-                  <button
-                    id="submit_location"
-                    type="submit"
-                    class="searchbar__submit btn btn-primary btn-large"
-                    v-on:click.prevent
-                  >Rechercher</button>
+
+                  <router-link class="searchbar__submit btn btn-primary btn-large" :to="{ name: 'annonces' }">Rechercher</router-link>
                 </form>
               </div>
             </div>
