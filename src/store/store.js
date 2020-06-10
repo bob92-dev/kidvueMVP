@@ -9,34 +9,7 @@ export default new Vuex.Store({
             data: null
         },
 
-        annonces: [{
-                id: "tanialasceptique",
-                propriétaire: "fBzhsmlSFqSsxeZucySy3VmNrIn1",
-                categorie: "poussette",
-                marque: "safetyfirst",
-                titre: "Loue super poussette",
-                prix: "3",
-                description: "Super poussette trois roues",
-                ville: "Paris",
-                dateDePublication: "2019-01-03T21:54:00.000Z",
-                disponibility: true,
-                imageUrl: "https://www.aubert.com/medias/sys_aubert/root/hf5/hca/9125112053790/01127161-1.jpg"
-            },
-
-            {
-                id: "yuyuanlameprisante",
-                propriétaire: "n7EuNc0EE4gK1grmKeFlZK4ecaS2",
-                categorie: "poussette",
-                marque: "Mac Laren",
-                titre: "Loue superpoussette",
-                prix: "5",
-                description: "Mon enfant ne l'utilise plus, je vous la propose à la location!",
-                ville: "Paris",
-                dateDePublication: "2019-01-03T21:54:00.000Z",
-                disponibility: true,
-                imageUrl: "https://www.icklebubba.com/wp-content/uploads/2020/06/Stomp-V3_All-in-One-with-Isofix_Silver-Frame_Silver_002.jpg"
-            }
-        ],
+        annonces: [],
         annonceChoisie: {}
 
     },
@@ -108,15 +81,15 @@ export default new Vuex.Store({
                 });
             });
         },
-        getAnnonce({ commit },categorie) {
-           
+        getAnnonce({ commit }, categorie) {
+
 
             var ref = firebase.database().ref('annonces');
             ref.once('value', function(snapshot) {
                 snapshot.forEach(function(childSnapshot) {
                     var childKey = childSnapshot.key;
                     var childData = childSnapshot.val();
-                        const advert = {
+                    const advert = {
                         id: childKey,
                         propriétaire: childData.propriétaire,
                         categorie: childData.categorie,
@@ -129,20 +102,19 @@ export default new Vuex.Store({
                         disponibility: true,
                         imageUrl: childData.imageUrl
                     }
-                
+
                     if (categorie != null) {
-                        if(advert.categorie == categorie){
+                        if (advert.categorie == categorie) {
                             commit('SET_ANNONCES', advert)
                         }
-                    }
-                    else {
+                    } else {
                         commit('SET_ANNONCES', advert)
-                         }
-                    
+                    }
+
                 });
             });
         }
     }
-       
-    
+
+
 });
