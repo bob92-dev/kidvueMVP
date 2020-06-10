@@ -12,6 +12,7 @@
 export default {
     props: {
     annonce: Object,
+    user:Object,
     }    
 }      
 </script>

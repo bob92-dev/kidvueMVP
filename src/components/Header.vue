@@ -18,7 +18,7 @@
                     </div>
                     <div v-else>
                            <a class="hdr-btn link-reset lys-link text-white">
-                        <router-link class="btn btn-outline-secondary" :to="{ name: 'creationAnnonce' }">Louer votre matériel</router-link>
+                        
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'inscription' }">Inscription</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'connexion' }">Connexion</router-link>   
                     </a>
