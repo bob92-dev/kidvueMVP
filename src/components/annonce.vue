@@ -12,13 +12,14 @@
                     <div class="col-sm-6 col-md-8">
                         <h4>{{annonce.titre}}</h4>
                         <small> {{annonce.ville}} <i class="glyphicon glyphicon-map-marker"></i></small><br/>
-                            <i class="glyphicon glyphicon-euro"></i> Prix: {{annonce.prix}}  <br />
+                            <i class="glyphicon glyphicon-euro"></i> Prix: {{annonce.prix}} €/jour <br />
                             <i class="glyphicon glyphicon-tag"></i> Marque:  {{annonce.marque}} <br/>
                             <i class="glyphicon glyphicon-list-alt"></i> Description: {{annonce.description}} <br/>
                              <br/>
                         <div class="btn-group">
-                            <router-link class="btn btn-outline-secondary "   :to="{ name: 'detailAnnonce', params: { id: annonce.id } }">Détail annonce</router-link>
-                            <button @click="send" type="button" class="btn btn-outline-secondary ropdown-toggle" >contacter le proprio</button>
+                            <router-link class="btn btn-info" :to="{ name: 'detailAnnonce', params: { id: annonce.id } }">Détail annonce</router-link>
+                            <router-link class="btn btn-outline-secondary" :to="{ name: 'profil'}">contacter le proprio </router-link>
+                            <router-link class="btn btn-primary" :to="{ name: ''}" >Paiement</router-link>
                             
                      </div>
                         
@@ -30,17 +31,10 @@
         
     </div>
 </div>
-
-        
-
-  </div>
-
-
+</div>
 </template>
 
 <script>
-
-
 export default {
 
   props: {
