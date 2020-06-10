@@ -11,6 +11,7 @@ import EditerProfil from "@/components/EditerProfil";
 import Contact from "@/views/Contact.vue";
 import Apropos from "@/views/Apropos";
 import Cgv from "@/views/Cgv.vue";
+import Nous from "@/views/Nous.vue";
 
 Vue.use(Router)
 
@@ -69,6 +70,11 @@ export default new Router({
             path: '/cgv',
             name: 'cgv',
             component: Cgv
+        },
+        {
+            path: '/nous',
+            name: 'nous',
+            component: Nous
         },
 
     ]
