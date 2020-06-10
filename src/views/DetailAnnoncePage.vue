@@ -26,7 +26,7 @@
             <p class="vote">Date de publication: {{annonce.dateDePublication}}</p>
             <p class="vote">Publié par: {{this.pseudo}}</p>
   					<div class="action">
-              <router-link class="btn btn-info" :to="{ name: 'profil'}">contacter le proprio </router-link>
+              <router-link class="btn btn-info" :to="{ name: 'contact'}">contacter le proprio </router-link>
               <router-link class="btn btn-primary" :to="{ name: ''}" >Paiement</router-link>
 
 						</div>
