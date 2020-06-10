@@ -18,7 +18,9 @@
       <div class="col-md-3 mb-md-0 mb-3">
          <router-link class="text-footer" :to="{ name: 'contact' }">Contact</router-link>
       </div>
-   
+      <div class="col-md-3 mb-md-0 mb-3">
+         <router-link class="text-footer" :to="{ name: 'nous' }">FAQ</router-link>
+      </div>
    
     </div>
   </div>
