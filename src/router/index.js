@@ -12,6 +12,7 @@ import Contact from "@/views/Contact.vue";
 import Apropos from "@/views/Apropos";
 import Cgv from "@/views/Cgv.vue";
 import Nous from "@/views/Nous.vue";
+import PageErreur from "@/views/PageErreur";
 
 Vue.use(Router)
 
@@ -76,6 +77,17 @@ export default new Router({
             name: 'nous',
             component: Nous
         },
+        {
+            path: '/404',
+            name: '404',
+            component: PageErreur,
+        },
+
+        {
+            path: '*',
+            redirect: { name: '404' }
+        }
+
 
     ]
 

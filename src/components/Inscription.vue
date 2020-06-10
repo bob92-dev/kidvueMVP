@@ -238,31 +238,33 @@ export default {
           this.data.error = err.message;
         });
     },
-  
-
-  writeUserData() {
-    var user = firebase.auth().currentUser;
-    const today = new Date();
-    const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
-    const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
-    const dateTime = date +' '+ time;
-    console.log("users/" + user.uid);
-    firebase
-      .database()
-      .ref("users/" + user.uid)
-      .set({
-        prenom: this.form.prenom,
-        nom: this.form.nom,
-        pseudo: this.form.pseudo,
-        datenaissance: this.form.datenaissance,
-        adresse: this.form.adress,
-        codePostal: this.form.codePostal,
-        ville: this.form.ville,
-        numeroTelephone: this.form.numeroTelephone,
-        email: this.form.email,
-        dateinscription: dateTime
-      });
-  }
+    alert(){
+      return alert("Votre inscription a été créer avec succès.")
+    },
+    writeUserData() {
+      var user = firebase.auth().currentUser;
+      const today = new Date();
+      const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
+      const time = today.getHours() + ":" + today.getMinutes() + ":" + today.getSeconds();
+      const dateTime = date +' '+ time;
+      console.log("users/" + user.uid);
+      firebase
+        .database()
+        .ref("users/" + user.uid)
+        .set({
+          prenom: this.form.prenom,
+          nom: this.form.nom,
+          pseudo: this.form.pseudo,
+          datenaissance: this.form.datenaissance,
+          adresse: this.form.adress,
+          codePostal: this.form.codePostal,
+          ville: this.form.ville,
+          numeroTelephone: this.form.numeroTelephone,
+          email: this.form.email,
+          dateinscription: dateTime
+        });
+        this.alert();
+    }
   },
 };
 </script>
