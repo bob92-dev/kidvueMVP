@@ -15,14 +15,6 @@ export default {
     components:{
         Inscription,
        
-    },
-    data(){
-        return {
-            
-
-        }
-    },
-
-    
+    }
 }
 </script>
