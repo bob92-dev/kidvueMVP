@@ -32,6 +32,7 @@ export default {
      },
      mounted:function(){
         this.display()
+        console.log("list" + this.Listannonces)
       },
      methods:{
        display(){
