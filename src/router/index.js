@@ -7,7 +7,7 @@ import DetailAnnoncePage from "@/views/DetailAnnoncePage";
 import CreationAnnonce from "@/views/CreationAnnonce.vue";
 import InscriptionPage from "@/views/InscriptionPage";
 import ConnexionPage from "@/views/ConnexionPage";
-import ProfilPage from "@/views/ProfilPage.vue";
+import ProfilPage from "@/components/EditerProfil.vue";
 import Contact from "@/views/Contact.vue";
 import Apropos from "@/views/Apropos";
 import Cgv from "@/views/Cgv.vue";

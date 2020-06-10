@@ -7,7 +7,7 @@
                     <div class="comp pull-right hide-host comp-become-a-host ">
                     <div v-if="connected.loggedIn == true">
                           <a class="black">
-                         Bienvenue {{ userDisplayName }} !
+                         <!-- Bienvenue {{ userDisplayName }} ! -->
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'creationAnnonce' }">Louer votre matériel</router-link>
                         <router-link class="btn btn-outline-secondary" v-on:click.native="deconnexion"  :to="{ name: 'deconnexion' }">Déconnexion</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'profil' }">Profil</router-link>
@@ -48,11 +48,11 @@ export default {
         }
     },
   
-      computed:{
+      /*computed:{
         userDisplayName() {
             return this.$store.state.user.data.displayName
         }
-    },
+    },*/
 
      methods:{
 deconnexion() {

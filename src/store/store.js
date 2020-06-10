@@ -45,7 +45,9 @@ export default new Vuex.Store({
         user(state) {
             return state.user
         },
-
+        userData(state) {
+            return state.user.data.id
+        },
         annonces(state) {
             return state.annonces
         },
@@ -75,7 +77,16 @@ export default new Vuex.Store({
             commit("SET_LOGGED_IN", user !== null);
             if (user) {
                 commit("SET_USER", {
-                    displayName: user.displayName,
+                    id: user.uid,
+                    prenom: user.prenom,
+                    nom: user.nom,
+                    pseudo: user.pseudo,
+                    datenaissance: user.datenaissance,
+                    adresse: user.adresse,
+                    codePostal: user.codePostal,
+                    ville: user.ville,
+                    numeroTelephone: user.numeroTelephone,
+                    dateinscription: user.dateinscription,
                     email: user.email
                 });
             } else {
