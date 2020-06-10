@@ -34,8 +34,7 @@ export default new Vuex.Store({
                 ville: "Paris",
                 dateDePublication: "2019-01-03T21:54:00.000Z",
                 disponibility: true,
-                photo: "poussette2.jpg"
-
+                imageUrl: "https://www.icklebubba.com/wp-content/uploads/2020/06/Stomp-V3_All-in-One-with-Isofix_Silver-Frame_Silver_002.jpg"
             }
         ],
         annonceChoisie: {}
