@@ -86,6 +86,7 @@ export default {
       materiels: ["poussette", "lit parapluie", "siège auto"]
     };
   }
+  
 };
 </script>
 
