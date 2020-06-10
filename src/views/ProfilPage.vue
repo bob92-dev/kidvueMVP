@@ -16,18 +16,15 @@
                     </div>
                     <div class="col-sm-6 col-md-8">
                         <h4>{{ userDisplayName }}</h4>
-                        <small> {{ ville  }}Paris, France <i class="glyphicon glyphicon-map-marker"></i></small>
-                        
-
-                            <i class="glyphicon glyphicon-envelope"></i><p> Email: {{ email }} <p>
-                                        
-                            <br />
-                            <i class="glyphicon glyphicon-gift"></i><p>Date de naissance:  {{ date }} </p>
-                             <i class="glyphicon glyphicon-gift"></i><p>Numero de telephone : {{ ville }} </p>
-                             
+                        <small> <i class="glyphicon glyphicon-map-marker"></i>{{ ville  }}Paris, France </small>
+                        <br><div></div><br>
+                        <p><i class="glyphicon glyphicon-envelope"></i> Email: {{ email }} <p>
+                        <p><i class="glyphicon glyphicon-gift"></i> Date de naissance:  {{ date }} </p>
+                        <p><i class="glyphicon glyphicon-phone"></i> Numero de telephone : {{ ville }} </p>
+                        <br><div></div><br>    
                         <div class="btn-group">
-                            <button  type="button" class="btn btn-outline-secondary ropdown-toggle" @click="changeShowEditerProfil" >Modifiez votre profil</button><br>
-                            <button  type="button" class="btn btn-outline-secondary ropdown-toggle" @click="changeShowMessage" >Message</button>
+                            <button  type="button" class="btn btn-outline-secondary ropdown-toggle perso" @click="changeShowEditerProfil" >Modifiez votre profil</button><br>
+                            <button  type="button" class="btn btn-outline-secondary ropdown-toggle perso" @click="changeShowMessage" >Message</button>
                      </div>
                         
                     </div>
@@ -91,5 +88,9 @@ export default {
 </script> 
 
 <style scoped>
-
+    .perso{
+        width:150px;
+        box-shadow: silver 3px 2px 2px;
+        margin-bottom: 5px;
+    }
 </style>
