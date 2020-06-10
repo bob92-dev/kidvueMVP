@@ -26,7 +26,7 @@
                              <i class="glyphicon glyphicon-gift"></i><p>Numero de telephone : {{ ville }} </p>
                              
                         <div class="btn-group">
-                            <button  type="button" class="btn btn-outline-secondary ropdown-toggle" @click="changeShowEditerProfil" >Modifiez votre profile</button><br>
+                            <button  type="button" class="btn btn-outline-secondary ropdown-toggle" @click="changeShowEditerProfil" >Modifiez votre profil</button><br>
                             <button  type="button" class="btn btn-outline-secondary ropdown-toggle" @click="changeShowMessage" >Message</button>
                      </div>
                         
