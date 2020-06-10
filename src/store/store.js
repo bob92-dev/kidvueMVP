@@ -108,21 +108,41 @@ export default new Vuex.Store({
                 });
             });
         },
-        /*getAnnonce(cle, list, { commit }) {
-            var annonce;
+        getAnnonce({ commit },categorie) {
+           
 
-            for (let i = 0; i < list.length; i++) {
-                if (cle == list[i].id) {
-                    annonce = list[i];
-                    console.log(annonce);
-                }
-            }
-            commit('SET_ANNONCECHOISIE', annonce)
-        }*/
-
-        //fonction pour ajouter une annonce dans la BDD
-        //Fonction pour modifier l'annonce dans la BDD
-        //Fonction pour envoyer le profil utilisateur dans la BDD
-        //Fonction pour modifier le profil utilisateur dans la BDD
+            var ref = firebase.database().ref('annonces');
+            ref.once('value', function(snapshot) {
+                snapshot.forEach(function(childSnapshot) {
+                    var childKey = childSnapshot.key;
+                    var childData = childSnapshot.val();
+                        const advert = {
+                        id: childKey,
+                        propriétaire: childData.propriétaire,
+                        categorie: childData.categorie,
+                        marque: childData.marque,
+                        titre: childData.titre,
+                        prix: childData.prix,
+                        description: childData.description,
+                        ville: childData.ville,
+                        dateDePublication: childData.date,
+                        disponibility: true,
+                        imageUrl: childData.imageUrl
+                    }
+                
+                    if (categorie != null) {
+                        if(advert.categorie == categorie){
+                            commit('SET_ANNONCES', advert)
+                        }
+                    }
+                    else {
+                        commit('SET_ANNONCES', advert)
+                         }
+                    
+                });
+            });
+        }
     }
+       
+    
 });

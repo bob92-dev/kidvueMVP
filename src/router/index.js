@@ -7,7 +7,7 @@ import DetailAnnoncePage from "@/views/DetailAnnoncePage";
 import CreationAnnonce from "@/views/CreationAnnonce.vue";
 import InscriptionPage from "@/views/InscriptionPage";
 import ConnexionPage from "@/views/ConnexionPage";
-import ProfilPage from "@/views/ProfilPage.vue";
+import EditerProfil from "@/components/EditerProfil";
 import Contact from "@/views/Contact.vue";
 import Apropos from "@/views/Apropos";
 import Cgv from "@/views/Cgv.vue";
@@ -22,9 +22,10 @@ export default new Router({
             component: Home
         },
         {
-            path: '/annonces',
+            path: '/annonces/:categorie',
             name: 'annonces',
-            component: Listeannonces
+            component: Listeannonces,
+            props: true
         },
         {
             path: '/detailannonce/:id',
@@ -52,7 +53,7 @@ export default new Router({
         {
             path: '/profil',
             name: 'profil',
-            component: ProfilPage
+            component: EditerProfil
         },
         {
             path: '/contact',
