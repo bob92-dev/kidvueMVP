@@ -43,7 +43,9 @@ export default {
     },
     
     methods: {
-
+      alert(){
+        return alert("Votre annonce a été créée avec succès.")
+      },
         writeAnnonceData: function() {
                     const today = new Date();
                     const date = today.getFullYear()+'-'+(today.getMonth()+1)+'-'+today.getDate();
@@ -64,6 +66,10 @@ export default {
                     description: this.description,
                     imageUrl: this.imageUrl,
                     propriétaire: user.uid
+                })
+                .then(() => {
+                  this.alert()
+                  this.$router.replace({ name: "toutesAnnonces" }) 
                 });
         },
     

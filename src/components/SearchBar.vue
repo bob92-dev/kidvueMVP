@@ -83,7 +83,7 @@ export default {
       datedepart: "",
       dateretour: "",
       select: "",
-      materiels: ["poussette", "lit parapluie", "siège auto"]
+      materiels: ["poussette", "lit parapluie", "siège auto", "autre"]
     };
   }
   

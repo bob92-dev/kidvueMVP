@@ -56,7 +56,7 @@ export default new Vuex.Store({
         },
         displayAdverts({ commit }) {
             //var titre;
-            var ref = firebase.database().ref('annonces');
+            var ref = firebase.database().ref('annonces').orderByChild('metrics/dateDePublication');
             ref.once('value', function(snapshot) {
                 snapshot.forEach(function(childSnapshot) {
                     var childKey = childSnapshot.key;
@@ -84,7 +84,7 @@ export default new Vuex.Store({
         getAnnonce({ commit }, categorie) {
 
 
-            var ref = firebase.database().ref('annonces');
+            var ref = firebase.database().ref('/annonces');
             ref.once('value', function(snapshot) {
                 snapshot.forEach(function(childSnapshot) {
                     var childKey = childSnapshot.key;
@@ -115,6 +115,4 @@ export default new Vuex.Store({
             });
         }
     }
-
-
 });

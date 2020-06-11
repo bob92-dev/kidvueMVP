@@ -15,9 +15,9 @@
 					</div>
 					<div class="details col-md-6">
 						<h3 class="product-title">{{annonce.titre}}</h3>
-						<div class="rating">
+						<!-- <div class="rating">
 							<span class="review-no">41 reviews</span>
-						</div>
+						</div> -->
 						<p class="product-description">{{annonce.description}}</p>
 						<h4 class="price">Prix: <span>{{annonce.prix}} €/jour</span></h4>
 						<p class="vote"><strong>Catégorie: {{annonce.categorie}}</strong></p>

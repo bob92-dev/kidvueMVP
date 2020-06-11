@@ -6,25 +6,23 @@
                 
                     <div class="comp pull-right hide-host comp-become-a-host ">
                     <div v-if="connected.loggedIn == true">
-                          <a class="black">
-                         Bienvenue {{ userDisplayName }} !
+                      <a class="black">
+                        <!-- Bienvenue {{ userDisplayName }} -->
+                        <router-link class="btn btn-outline-secondary" :to="{ name: 'toutesAnnonces' }">Toutes nos annonces</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'creationAnnonce' }">Louer votre matériel</router-link>
-                        
                         <router-link class="btn btn-outline-secondary" v-on:click.native="deconnexion"  :to="{ name: 'deconnexion' }">Déconnexion</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'profil' }">Profil</router-link>
-                        </a>
+                      </a>
                      
                    
                         
                     </div>
                     <div v-else>
-                           <a class="hdr-btn link-reset lys-link text-white">
-                        
+                      <a class="hdr-btn link-reset lys-link text-white">
+                        <router-link class="btn btn-outline-secondary" :to="{ name: 'toutesAnnonces' }">Toutes nos annonces</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'inscription' }">Inscription</router-link>
                         <router-link class="btn btn-outline-secondary" :to="{ name: 'connexion' }">Connexion</router-link>   
-                    </a>
-                      
-                    
+                      </a>
                     </div>
 
                 </div>  

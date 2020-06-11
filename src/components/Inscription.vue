@@ -72,7 +72,7 @@
                   <div class="col-md-6">
                     <input
                       id="pseudo"
-                      type="pseudo"
+                      type="text"
                       class="form-control"
                       name="pseudo"
                       value
@@ -91,7 +91,7 @@
                       id="email"
                       type="text"
                       class="form-control"
-                      name="email"
+                      name="nom"
                       value
                       required
                       autofocus
@@ -239,7 +239,7 @@ export default {
         });
     },
     alert(){
-      return alert("Votre inscription a été créer avec succès.")
+      return alert("Inscription validée.")
     },
     writeUserData() {
       var user = firebase.auth().currentUser;
@@ -262,8 +262,11 @@ export default {
           numeroTelephone: this.form.numeroTelephone,
           email: this.form.email,
           dateinscription: dateTime
+        })
+        .then(() => {
+          this.alert()
+          this.$router.replace({ name: "home" }) 
         });
-        this.alert();
     }
   },
 };

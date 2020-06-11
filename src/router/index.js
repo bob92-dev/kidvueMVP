@@ -3,6 +3,7 @@ import Router from 'vue-router';
 
 import Home from "@/views/Home.vue";
 import Listeannonces from "@/views/Listeannonces.vue";
+import ToutesAnnonces from "@/views/ToutesAnnonces.vue";
 import DetailAnnoncePage from "@/views/DetailAnnoncePage";
 import CreationAnnonce from "@/views/CreationAnnonce.vue";
 import InscriptionPage from "@/views/InscriptionPage";
@@ -28,6 +29,11 @@ export default new Router({
             name: 'annonces',
             component: Listeannonces,
             props: true
+        },
+        {
+            path: '/annonces',
+            name: 'toutesAnnonces',
+            component: ToutesAnnonces
         },
         {
             path: '/detailannonce/:id',
